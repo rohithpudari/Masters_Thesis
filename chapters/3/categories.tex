@@ -1,0 +1,21 @@
+\startchapter{Categories}
+\label{chapter:categories}
+
+\section{Bad Practices}
+Being trained on the public data available on GitHub, Copilot\cite{copilot} will have data with bad practices and outdated code versions. Many projects on GitHub are personal projects and not very active \rohith{find citations for this}, Developers always need to update themselves and their code to support the newest versions and resolve a new bug. 
+
+A recent study by Pearce et.al\cite{copilot_security} showed that approximately 40\% of the code suggested by Copilot is found to be vulnerable, when tested on 89 different scenarios for copilot to complete. It would very expensive as it requires large amounts of computing power to update copilot for every new software release on GitHub. It would be very hard to quickly change the behaviour of copilot suggestions to resolve a newly found bug or to support a newer version of a dependency in a fast moving field like JavaScript, where updates happen every day. For example, The log4shell was a zero-day vulnerability in log4j, a popular java logging framework used in many public repositories on GitHub. This affected 93\% of all cloud environments\footnote{\url{https://www.wiz.io/blog/10-days-later-enterprises-halfway-through-patching-log4shell/}}.  Copilot will not be able to update its suggestions based on the fix as it is trained on millions of lines of code written before the vulnerability was discovered. At the time of testing, Copilot suggested code vulnerable to SQL injection, which was a most common security flaw in 2000s. 
+
+As it is trained on public data collected on a certain date, any code uploaded after that is absent in the knowledge base of copilot. For example, in JavaScript, callback api was used in the past to achieve concurrency which were replaced by promises. We checked if copilot suggests code which is specifically mentioned in the JavaScript documentation as a bad practice or an anti-pattern. Copilot, powered by Codex, used training data collected in May 2020 from 50 Million public repositories on GitHub\cite{copilot}. So, it does not have any data from useful sources like documentation and StackOverflow to improve its suggestions from commonly occurring bugs.
+
+For example, Bad Practices in using promises for asynchronous JavaScript like not returning promises after creation, forgetting to terminate chains without catch statement, which are explained in documentation\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises}} and StackOverflow\footnote{\url{https://stackoverflow.com/questions/30362733/handling-errors-in-promise-all/}} are not known to copilot and suggested code with those common anti-patterns as they occur more frequently in copilot training data.
+
+Recommendations to improve copilot suggestions are
+\begin{enumerate}
+    \item add more verified sources like documentations to training data.
+    \item perform a code smell detection before every suggestion.
+    \item ranking suggestions based on repository (source of suggestion) popularity.
+\end{enumerate}
+
+\input chapters/3/common_errors
+\input chapters/3/licensing
