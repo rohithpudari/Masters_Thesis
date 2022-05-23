@@ -1,3 +1,27 @@
 \startchapter{Discussion}
 \label{chapter:eval}
 
+\section{Implications for practice}
+	Better training data
+	Clearly delineate the limitations
+- Control: if you ask for a N2 algorithm it will give it to you. Should it? (Auto braking - use accelerator)
+- How far should users search for the right answer? 
+Recommendations to improve copilot suggestions are
+\begin{enumerate}
+    \item add more verified sources like documentations to training data.
+    \item perform a code smell detection before every suggestion.
+    \item ranking suggestions based on repository (source of suggestion) popularity.
+\end{enumerate}
+\section{Implications for research}
+	AI for design and module level concerns - how to recapture patterns and strategies
+	Example: design a system that uses Amazon SMS to parse messages of this type and stores the data in this block store after running a lambda function to restrict access
+	Create a website that has customers and orders and allows new orders and customer updates using MVC
+- Learn from code scans (reinforcement learning for code) 
+- 
+\section{Design Smells}
+	Context specific issues such as variable naming conventions and formatting 
+	Design smells or arch smells (Tushar Sharma) 
+	Challenge is does not know the structure of the system or other files 
+	
+\section{Bad Practices}
+    We ran an experiment with copilot to create a popular array sorting algorithm called bubble sort. Using the code suggested by copilot, it missed edge cases like empty arrays.
