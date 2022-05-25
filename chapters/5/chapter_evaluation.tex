@@ -1,27 +1,33 @@
 \startchapter{Discussion}
 \label{chapter:eval}
 
+Although, copilot is very good at solving LeetCode problems~\cite{empirical_eval}, our experiments show that it does not do well in suggesting popular idioms and best practices. Based on our experiences, we suggest the following implications for future.
+
 \section{Implications for practice}
-	Better training data
-	Clearly delineate the limitations
-- Control: if you ask for a N2 algorithm it will give it to you. Should it? (Auto braking - use accelerator)
-- How far should users search for the right answer? 
-Recommendations to improve copilot suggestions are
+There is a requirement for better training data to improve copilot suggestions to minimise code smells and bad practices with adding more verified sources like well known books and code documentation pages to follow the best practices. The goal here is to make good practices more frequent than the bad ones to make copilot suggest good code as its top suggestion.
+
+code completion tools should further look into collaborating with existing tools for code smells like SonarQube\footnote{https://www.sonarqube.org} or any other code review bots, to potentially improve the quality of training data.
+
+% As code completion tools are used for productivity, they should improve the ranking system to make best solutions appear as top suggestion (it would take more time to go through all suggestions)
+
+Recommendations to improve AI driven Development:
 \begin{enumerate}
-    \item add more verified sources like documentations to training data.
-    \item perform a code smell detection before every suggestion.
+    \item add more verified sources like books and documentations to training data.
+    \item perform code smell detection and vulnerability checks before every suggestion and rank them accordingly.
     \item ranking suggestions based on repository (source of suggestion) popularity.
 \end{enumerate}
+
 \section{Implications for research}
-	AI for design and module level concerns - how to recapture patterns and strategies
-	Example: design a system that uses Amazon SMS to parse messages of this type and stores the data in this block store after running a lambda function to restrict access
-	Create a website that has customers and orders and allows new orders and customer updates using MVC
-- Learn from code scans (reinforcement learning for code) 
-- 
-\section{Design Smells}
-	Context specific issues such as variable naming conventions and formatting 
-	Design smells or arch smells (Tushar Sharma) 
-	Challenge is does not know the structure of the system or other files 
-	
-\section{Bad Practices}
-    We ran an experiment with copilot to create a popular array sorting algorithm called bubble sort. Using the code suggested by copilot, it missed edge cases like empty arrays.
+To solve complex software engineering challenges with AI driven Development, it should capture design and module level concerns like recapturing patterns and strategies to improve and personalize suggestions. A data set with common patterns and best practices is required to train and test AI and make them capable of suggesting patterns like MVC when prompted.
+
+Though the actual input size for context is not disclosed by copilot, There is a need to increase the input size to multiple files and folders to improve suggestions. For example, when there are multiple files implementing MVC pattern, copilot should never suggest code where model communicates directly with views.
+
+\subsection{explainability} - Copilot is closed source, and it is currently not possible to determine the source or the reason behind each suggestion, making it difficult to detect the problem. Though, there are ethical reasons for potential misuse. It is beneficial for research if we could use chain of thought process by Wang et al.~\cite{chain_of_thought} to improve the reasoning ability and also inform the user about the process behind the creation of suggestion.
+
+\subsection{Control} - Being generative models, tools like copilot are extremely sensitive to input with stability challenges and to make them autonomous raises control concerns, For example, if a human asks for a N\textsuperscript{2} algorithm, Should it give it to you? Ideally, tools should warn users if prompted to suggest sub optimal code. AI driven development should learn to differentiate between optimal and sub-optimal code. 
+\rohith{can we write this? "We think this is possible through following commit histories of files as they are the possible places to find bug fixes and performance improvements."}
+
+% 	AI for design and module level concerns - how to recapture patterns and strategies
+% 	Example: design a system that uses Amazon SMS to parse messages of this type and stores the data in this block store after running a lambda function to restrict access
+% 	Create a website that has customers and orders and allows new orders and customer updates using MVC
+% - Learn from code scans (reinforcement learning for code) 

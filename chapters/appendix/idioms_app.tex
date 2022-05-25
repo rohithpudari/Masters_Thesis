@@ -1,0 +1,101 @@
+\section{Language Idioms}
+
+\begin{tcolorbox}[title=Dict Comprehension,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language=Python]
+# dict comprehension
+
+d=
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=Python,escapechar=\%]
+% \noindent\textcolor{gray}{d  =} % []
+for i in range(1,11):
+    d[i]=i
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source \cite{Alexandru2018}}:}
+\begin{lstlisting}[language=Python]
+dict_compr = {k: k**2 for k in range(1,11)}
+\end{lstlisting}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tcolorbox}[title=Mapping,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language=Python]
+# mapping
+
+numbers = range(5)
+square = 
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=Python,escapechar=\%]
+% \noindent\textcolor{gray}{square = []} % []
+for i in range(5):
+    square.append(i**2)
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source \cite{Alexandru2018}}:}
+\begin{lstlisting}[language=Python]
+square = map(lambda x: x**2, numbers)
+\end{lstlisting}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tcolorbox}[title=Reduce,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language=Python]
+# reduce
+
+numbers = range(20)
+
+result =
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=Python,escapechar=\%]
+% \noindent\textcolor{gray}{result = 0} % []
+for i in numbers:
+    result += i
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source \cite{Alexandru2018}}:}
+\begin{lstlisting}[language=Python]
+result = reduce(lambda x, y: x + y, numbers)
+\end{lstlisting}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tcolorbox}[title=Filter,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language=Python]
+#filter
+
+numbers = range(20)
+
+result =
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=Python,escapechar=\%]
+% \noindent\textcolor{gray}{result = []} % []
+for i in numbers:
+    if i % 2 == 0:
+	result.append(i)
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source \cite{Alexandru2018}}:}
+\begin{lstlisting}[language=Python]
+result = filter(lambda x: x % 2 == 0, numbers)
+\end{lstlisting}
+\end{tcolorbox}

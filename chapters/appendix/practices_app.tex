@@ -1,0 +1,98 @@
+\section{Best Practices}
+
+\begin{tcolorbox}[title=object-shorthand,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language=JavaScript]
+// object-shorthand
+
+const atom = {
+	value: 1,
+      
+	addValue:
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=JavaScript, escapechar=\%]
+% \noindent\textcolor{gray}{addValue:}%
+ function(value) {
+		this.value += value;
+	}
+};
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source~\cite{airbnb_code}}:}
+\begin{lstlisting}[language=JavaScript]
+addValue(value) {
+    return atom.value + value;
+\end{lstlisting}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tcolorbox}[title=array creating constructor,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language=JavaScript]
+const items = 
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=JavaScript, escapechar=\%]
+const items = new Array(1, 2, 3);
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source~\cite{airbnb_code}}:}
+\begin{lstlisting}[language=JavaScript]
+const items = [1, 2, 3];
+\end{lstlisting}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tcolorbox}[title=copying array contents,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language=JavaScript]
+// copying array contents
+
+const len = items.length;
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=JavaScript, escapechar=\%]
+const copy = new Array(len);
+for (let i = 0; i < len; i++) {
+	  copy[i] = items[i];
+}
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source~\cite{airbnb_code}}:}
+\begin{lstlisting}[language=JavaScript]
+const itemsCopy = [...items];
+\end{lstlisting}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tcolorbox}[title=Export function,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language=JavaScript]
+//export function
+
+export 
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=JavaScript, escapechar=\%]
+export function get_standard_5_js() {
+    return "javascript";
+}
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source~\cite{airbnb_code}}:}
+\begin{lstlisting}[language=JavaScript]
+export default function foo() {}
+\end{lstlisting}
+\end{tcolorbox}
