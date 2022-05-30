@@ -1,31 +1,19 @@
 \startchapter{AI-driven Software Engineering}
 \label{chapter:Exp}
 
-The current approaches focus on programming-in-the-small i.e, on individual lines of code. 
-Code language models have focused (effectively!) on source code as language, implying the task is to predict the next token or series of tokens.
-Thus support is for software \textit{coding} rather than software \emph{engineering}. 
-What might AI support for software engineering require? 
+The current approaches focus on programming-in-the-small \cite{DeRemer1976} i.e, on individual lines of code. 
+Code language models have focused (effectively!) on source code as natural language~\cite{natural}.
+This models the software development task as predicting the next token or series of tokens.
+As Copilot's webpage says, the aim for Copilot is to produce ``safe and effective code [with] suggestions for whole lines or entire functions'' as ``your AI pair programmer''~\cite{Copilot-web}. 
+Thus support from language models is currently focused on software \textit{programming}, rather than software \emph{engineering} (in-the-large). 
+% \neil{wut? --D} 
+% But there are areas of code suggestions that are not easily fixable or at least, not detectable efficiently before training or recommendation is required, at the time-scale of code completion (which we assume is nearly instantaneous, as evidenced by how existing autocomplete editors work.)
 
-There are areas of code suggestions that are not easily fixable or at least, not detectable efficiently before training or recommendation is required, at the time-scale of code completion (less than one second) \cite{}.
-These problems align with a software abstraction hierarchy that sees code compilation and syntax checking at the least abstract level, and software architecture analysis and design at the most abstract level.
-Figure \ref{fig:levels} exemplifies this. \neil{adapt for this paper - add AI, add line of tradeoff}
-As we descend the levels, we have software concepts that are more difficult to automate (design rules vs code smells), that are nonetheless more important for software quality attributes (QA). 
-We suggest that similarly, AI will struggle to offer useful suggestions lower down the list. 
-The question remains where we stand today, and where the line (or area) exists between places where the AI should drive, and where a human engineer should take control.
+What might AI support for these more complex software engineering challenges require? 
+We present a simple taxonomy in Figure \ref{fig:levels}, modeled on the ideas in the SAE taxonomy and Koopman's extension for self-driving vehicles (Fig. \ref{fig:koopman_pyramid}), as one way of thinking about this question. 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.5\linewidth]{Figures/taxonomy-copilot.pdf}
-    \caption{Hierarchy of software abstractions. Syntax reflects syntactically correct code and is warned by the compiler. Warnings include `-w' style compiler flags. Smells are aspects of source code that are sub-optimal by general acceptance; paradigms are idioms and good practices for languages and problems areas such as mobile computing. Finally, design refers to optimal design approaches for system qualities.}
-    \label{fig:levels}
-\end{figure}
-
-We consider three scenarios. 
-One is the way Copilot and AI-driven development manage language idioms.
-A second is the way best practices are dealt with.
-% \neil{third? maybe SQ smells design smells.}.
-
+\input{chapters/4/taxonomy}
 \input{chapters/4/idioms}
 \input{chapters/4/practices}
 \input{chapters/4/smells}
-\input{chapters/4/limitations}
+\input{chapters/4/summary}
