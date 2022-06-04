@@ -16,10 +16,10 @@
   - current challenges with Copilot - correctness part - obvious errors with easy fixes.
   	- structuring these challenges in next chapters.
 3. idioms
-  1. (NE: make sure you clearly describe the method followed)
-  2. Best practices
-  3. Python Idioms
-  4. Async example of promises and callbacks.
+  - (NE: make sure you clearly describe the method followed)
+  - Best practices
+  - Python Idioms
+  - Async example of promises and callbacks.
 4. Smells
   - Licence infringements
   - code review best practices
