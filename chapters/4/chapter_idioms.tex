@@ -1,0 +1,19 @@
+\startchapter{Language Idioms and Best Practices}
+\label{chapter:idioms}
+
+\section{Introduction}
+Useful \AISE{} tools should only suggest idiomatic code, the Paradigms and Idioms level in our taxonomy.  
+We leveraged the work of Alexandru et al.~\cite{Alexandru2018}, which identified community consensus on common Python programming idioms, and examined how Copilot suggested their top five idioms.
+
+
+\section{Methodology}
+The input to Copilot consisted of the idiom title as the first comment to provide context, as before, with minimal additional prompting. This mimics a novice user. 
+% and the input was restricted to being able to go derive the ideal way from the input. This is to ensure Copilot is making the decision to suggest the good/bad way.
+% We considered it a match if Copilot suggested the idiom in the first two suggestions, but note if the idiom appeared any of the top 10 suggestions currently viewable in Copilot. 
+% \neil{is there evidence in recommender systems HCI to support top2?}\rohith{we could navigate through all suggestions with "alt+]" and "alt+[" listed in \href{https://github.com/github/copilot-docs/blob/main/docs/visualstudiocode/gettingstarted.md}{click here}}
+
+% including sections in other files.
+\input{chapters/4/idioms}
+\input{chapters/4/best_practices}
+\input{chapters/4/async}
+\input{chapters/4/summary}

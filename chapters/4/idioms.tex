@@ -1,0 +1,26 @@
+\section{Python Idioms}
+Copilot failed to suggest the idiomatic approach for all five idioms we tested. 
+For 3 out of 5 idioms, the idiomatic way was in Copilot's top 10 suggestions.
+
+Below is the example of the List Comprehension idiom, showing user input, the top suggestion by Copilot (i.e., model output) and the recommended way suggested by Alexandru et al.~\cite{Alexandru2018}.
+
+\begin{tcolorbox}[title=List Comprehension,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language={Python}]
+#list comprehension
+result_list = 
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=Python,escapechar=\%]
+% \noindent\textcolor{gray}{result\_list  =} % []
+for i in range(1,11):
+    result_list.append(i)
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source \cite{Alexandru2018}}:}
+\begin{lstlisting}[language=Python]
+result_list = [el for el in range(11)]
+\end{lstlisting}
+\end{tcolorbox}
