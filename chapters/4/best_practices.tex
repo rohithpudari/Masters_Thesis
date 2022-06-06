@@ -1,1 +1,43 @@
 \section{Best Practices}
+\label{bp}
+A good \AISE{} tool should only suggest code that passes code reviews by humans. Code review problems align with the Code Smell level (middle level) in our taxonomy. 
+
+% For example, in JavaScript, callback api was used in the past to achieve concurrency which were replaced by promises. We checked if Copilot suggests code which is specifically mentioned in the JavaScript documentation as a bad practice or an anti-pattern. Bad Practices in using promises for asynchronous JavaScript like not returning promises after creation, forgetting to terminate chains without catch statement, which are explained in documentation\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises}} and StackOverflow\footnote{\url{https://stackoverflow.com/questions/30362733/handling-errors-in-promise-all/}} are not known to Copilot and suggested code with those common anti-patterns as they occur more frequently in Copilot training data.
+
+\noindent\textbf{Method:} We relied on the AirBNB JavaScript coding style guide~\cite{airbnb_code}, a widely used coding style and code review standard. 
+The AirBNB standard contains a variety of best practices. 
+We chose practices that were closer to the the design level of our taxonomy, rather than the code level (e.g., logging practices rather than trailing comma use in Javascript). 
+We focus on five JavaScript coding standards. % from the AirBNB JavaScript coding style guide~\cite{airbnb_code}. 
+The input we gave Copilot consisted of the best practice name as the first comment to provide context, and then minimal extra input to prompt Copilot. 
+%The listing \textsf{Copying Array Contents} explains our input, Copilot's suggestion, and the ideal/preferred way. 
+% This is to ensure Copilot is making the decision to suggest the good/bad way. 
+We considered the suggestion a match if Copilot suggested the ideal way as its first suggestion, under the assumption that most developers would not spend time looking through the remaining nine. We do note if the recommended way appeared any of the top 10 suggestions. 
+% Below is the list of five best practices we tested:
+% \neil{i think a quick list listing the chosen standards would help, alongside the place the suggestion occurred (e.g.).}
+
+Copilot failed to suggest the recommended way for all five standards we tested, i.e, Copilot did not have the recommended way in its top two suggestions. Only 1 out of 5 standards had the recommended approach in the top 10 suggestions. 
+
+Below is an example of Copying Array Contents (Practice 3). 
+We first show the user input that triggers Copilot, the top suggestion by Copilot (i.e., model output) and the recommended way suggested by the AirBNB coding style guide~\cite{airbnb_code}.
+
+\begin{tcolorbox}[title=Copying Array Contents,boxsep=.5mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language=JavaScript]
+// copying array contents
+const len = items.length;
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=JavaScript]
+const copy = new Array(len);
+for (let i = 0; i < len; i++) {
+	  copy[i] = items[i];
+}
+\end{lstlisting}
+\tcbline
+\textbf{Ideal way\footnote{source \cite{airbnb_code}}:}
+\begin{lstlisting}[language=JavaScript]
+const itemsCopy = [...items];
+\end{lstlisting}
+\end{tcolorbox}
