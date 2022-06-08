@@ -15,17 +15,17 @@
   - Scoping the Thesis to Copilot and its current capabilities.
   - current challenges with Copilot - correctness part - obvious errors with easy fixes.
   	- structuring these challenges in next chapters.
-3. idioms
-  - (NE: make sure you clearly describe the method followed)
-  - Best practices
-  - Python Idioms
-  - Async example of promises and callbacks.
-4. Smells
+3. Smells
   - Licence infringements
   - code review best practices
   	- Security issues.
   	- common errors/Bugs.
   - more specifications in input resolving these issues?
+4. idioms
+  - (NE: make sure you clearly describe the method followed)
+  - Best practices
+  - Python Idioms
+  - Async example of promises and callbacks.
 5. Framework
   - RQ1: taxonomy helps assess this boundary. explain each stage in taxonomy and capabilities required for each stage to be completed.
   - syntax level
