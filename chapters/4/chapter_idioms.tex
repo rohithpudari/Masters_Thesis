@@ -16,7 +16,7 @@ In this Section, We explain the methodology we used to address \textbf{RQ-1.1} (
 
 \subsection{Sampling Approach}
 \label{sampling}
-To give the best chance for \cop{} to suggest the optimal way, we sampled the top 10 most frequent idioms used in open source projects. So that, \cop{} will have the optimal way more frequently in its training data. However, \cop{} is closed source and we cannot determine if the frequency of code snippet in training data affects \cop{} suggestions in any way. Research by GitHub shows that Copilot can sometimes recite from its training data in ``generic contexts"\footnote{\url{https://github.blog/2021-06-30-github-copilot-research-recitation/}}, which may lead to Licence Infringements shown in Section~\ref{licence}. Sampling the most frequently used Idioms will also help understand if copilot can recite idioms, which is the ideal behaviour for \cct{}.
+To give the best chance for \cop{} to suggest the optimal way, we sampled the top ten most frequent idioms used in open source projects. So that, \cop{} will have the optimal way more frequently in its training data. However, \cop{} is closed source and we cannot determine if the frequency of code snippet in training data affects \cop{} suggestions in any way. Research by GitHub shows that Copilot can sometimes recite from its training data in ``generic contexts"\footnote{\url{https://github.blog/2021-06-30-github-copilot-research-recitation/}}, which may lead to Licence Infringements shown in Section~\ref{licence}. Sampling the most frequently used Idioms will also help understand if copilot can recite idioms, which is the ideal behaviour for \cct{}.
 
 \subsection{Study Setup}
 
@@ -26,7 +26,7 @@ The input to \cop{} consisted of the idiom title as the first comment to provide
 
 \subsubsection{Evaluation}
 \label{evaluation}
-We considered \cop{} suggested the optimal way if Copilot suggested the best practice in the first suggestion, In this case, we considered \cct{} as productivity tools and user should be saving time as opposed to writing the optimal way without using \cct{}, Scrolling through all the suggestions to deduce the optimal way defeats this purpose. For this reason, We restricted ourselves to first suggestion. However, we do note if the best practice appeared any of the top 10 suggestions currently viewable in \cop{} interface. 
+We considered \cop{} suggested the optimal way if Copilot suggested the best practice in the first suggestion, In this case, we considered \cct{} like \cop{} as productivity tool and user should be saving time as opposed to writing the optimal way without using \cct{}, Scrolling through all the suggestions to deduce the optimal way defeats this purpose. For this reason, We restricted ourselves to first suggestion. However, we do note if the best practice appeared any of the top 10 suggestions currently viewable in \cop{} interface. 
 
 % including sections in other files.
 \input{chapters/4/idioms}

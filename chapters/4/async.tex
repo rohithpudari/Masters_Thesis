@@ -1,2 +1,7 @@
-\subsection{Evolution of Best Practices}
+\section{Evolution of Best Practices Over Time}
 \label{evolution}
+Best Practices evolve over time. \cct{} need to update their suggestions at regular intervals to reflect the changes in Best Practices. 
+
+For example, in JavaScript, callback api was considered as the best practice in the past to achieve concurrency which were replaced by promises. \cop{} suggested code which is specifically mentioned in the JavaScript documentation as a bad practice and anti-pattern\footref{docs}.
+
+Bad Practices in using promises for asynchronous JavaScript like not returning promises after creation, forgetting to terminate chains without catch statement, which are explained in documentation\footnote{\label{docs}\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises}} and StackOverflow\footnote{\url{https://stackoverflow.com/questions/30362733/handling-errors-in-promise-all/}} are not known to \cop{} and suggested code with those common anti-patterns as they could have occurred more frequently in Copilot training data. However, this is beyond the scope of this study and will be part of future work.
