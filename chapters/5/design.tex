@@ -1,7 +1,29 @@
-\section{Design}
+\subsection{Design}
+\label{design}
 
-\subsection{Design Patterns}
 
-\subsection{Gap Between Smells and Design}
+\subsubsection{Design Patterns}
+\label{patterns}
 
-\subsection{Future Directions}
+\section{Gap Between Smells and Design}
+\label{gap}
+
+\section{Future Directions}
+\label{future}
+To solve complex software engineering challenges with AI, machine learning models must be able to capture design and module level concerns. 
+These include recapturing design patterns (such as Observer) and architectural tactics (such as Heartbeat) to improve and personalize suggestions. 
+To do this, however, the training data must also use these patterns and best practices.
+The vision is for something like Copilot to be capable of suggesting patterns like Model-View-Controller (MVC) when prompted. 
+Being able to identify where design artifacts occur in the code, such as with pattern recovery~\cite{Keim2020}, is one avenue to explore. 
+
+Another research challenge is to move beyond token-level suggestions and work at code block or file level (e.g., a method or module). 
+Increasing the model input size to span multiple files and folders would improve suggestions. For example, when there are multiple files implementing the MVC pattern, Copilot should never suggest code where \textsf{Model} communicates directly with \textsf{View}. 
+\AISE{} tools will need to make suggestions in multiple program units to accommodate these more abstract design concerns.
+
+One suggestion is to use recent ML advances in helping language models `reason', such as the chain of thought process by Wang et al.~\cite{chain_of_thought}. 
+Chain-of-thought shows the model an example of reasoning, which then allows the model to reproduce the reasoning pattern on a different input.
+Such reasoning is common for design questions. 
+Shokri~\cite{shokri21} explored this with framework sketches.
+
+For example, using architectural scenarios helps (humans) reason about which tactic is most suitable for the scenario~\cite{kazman98}. This is a version of chain of thought for designing systems. 
+However, we have an imperfect understanding of the strategies that drive human design approaches for software~\cite{Arab2022}. 

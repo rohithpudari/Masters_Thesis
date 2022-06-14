@@ -2,8 +2,26 @@
 \label{chapter:smells}
 
 \section{Introduction}
+The current approaches focus on programming-in-the-small \cite{DeRemer1976} i.e, on individual lines of code. 
+Code language models have focused (effectively!) on source code as natural language~\cite{natural}.
+This models the software development task as predicting the next token or series of tokens.
+As Copilot's webpage says, the aim for Copilot is to produce ``safe and effective code [with] suggestions for whole lines or entire functions'' as ``your AI pair programmer''~\cite{Copilot-web}. 
+
+Since these tools are trained on existing software source code, and training costs are expensive, several classes of errors have been discovered, which follow from the presence of these same errors in public (training) data. In this chapter, we begin by explaining our approach to \textbf{RQ-1.1} (How do \cct{} manage to write non-smelly code?). we categorise the different kinds of errors that have been discovered so far, showing an example for each category. 
+We introduce the methodology used to analyse \cop{} code suggestions. (Section~\ref{method}) for the three categories under study: Licence Infringements (Section~\ref{licence}), Potential Security issues (Section~\ref{security}) and Common errors (Section~\ref{common}).
+
+We also discuss on how sensitive \cop{} is to the user input and show potential directions to resolve these issues with recommendations based on the analysing \cop{} code suggestions (Section~\ref{smells:dis}).
 
 \section{Methodology}
+\label{method}
+In this Section, we explain the methodology we used to address \textbf{RQ-1.1} (How do \cct{} manage to write non-smelly code?), including what was the input for copilot and how is the suggestion evaluated. All of the following analysis was carried out using \cop{} extension in Visual Studio Code, which makes \cop{} model versioning and clarity challenging. We use the most recent stable release of Copilot extension (version number todo) in visual studio code. 
+
+\subsection{Licence Infringements}
+We considered input of 10 lines from a random file on github with at least 100 lines of code. If \cop{} suggests next 20 lines exactly like the source file on github, we considered it as a copyright violation. 
+
+\subsection{Security Issues and Common Errors}
+The input to \cop{} consisted of the task title as the first comment to provide context, and the input was restricted to being able to derive the ideal way from the input. This is done to ensure Github Copilot is making the decision to suggest the non-ideal/ideal way in its suggestions. This input style also mimics a novice user, who is unaware of the ideal practices and useful AI-supported code completion tools
+should drive the novice user to use ideal practices.  
 
 \input{chapters/3/licence}
 \input{chapters/3/security}

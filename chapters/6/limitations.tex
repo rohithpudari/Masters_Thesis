@@ -1,3 +1,23 @@
 \section{Limitations}
+\label{limitations}
+Copilot and its underlying OpenAI Codex LLM are not open source. 
+%Accessing them is restricted to API calls. General users cannot directly examine the model. 
+We base our conclusions on API results, which makes versioning and clarity challenging. We use the current stable Copilot extension release in Visual Studio Code. %The manual effort needed to query Copilot restricts the ability to use large datasets.
+
+Copilot is sensitive to user inputs. This hurts replicability as a different formulation of the problem might produce a different set of suggestions. 
+Thus a reasonable concern is that our (human) input is unfair to Copilot, and with some different inputs, the tool might generate the correct idiom. 
+For replicability, we archived all examples in our replication package at \repl{}.
+%\neil{can we try this? }\rohith{idioms are mostly one lined, and longer inputs/suggestions could be described as bad practices/design smells}
+
+Our intention is admittedly to show where Copilot is not able to consistently generate the preferred answer. We biased our evaluation to highlight this by choosing input that simulates what a less experienced programmer might enter. 
+But we argue this is reasonable: for one, these are precisely the developers likely to use Copilot suggestions, and unlikely to know the idiomatic usage.
+More importantly, a lack of suggestion stability seems to come with its own set of challenges, equally important to understand.% (to use an analogy, we would expect all self-driving vehicles to make the similar choices when confronted with similar circumstances). 
+%this gets to the top levels of Koopmann's pyramid.
+% Access to Copilot is currently restricted. 
+% Working with GitHub's API - not open
+%
+%OpenAI and open source
 
 \section{Ethical Considerations}
+\label{ethics}
+Codex imports packages at different rates~\cite{copilot}, which could advantage some authors over others. As Copilot is both a \emph{black-box} and \emph{closed-source}, One can only speculate on the reasoning behind each suggestion.  For example, what sort algorithm to use. Not just a technical question but much more challenging ethically on why a particular algorithm is suggested than a flash fill kind such as a coding contest question.

@@ -1,1 +1,7 @@
 \section{Control}
+\label{control}
+Being generative models, tools like Copilot are extremely sensitive to input with stability challenges and to make them autonomous raises control concerns.
+For example, if a human asks for a N\textsuperscript{2} sorting algorithm, should Copilot recommend one, or the NlogN alternative? 
+Ideally, tools should warn users if prompted to suggest sub-optimal code. 
+\AISE{} should learn to differentiate between optimal and sub-optimal code. 
+One direction to look at is following commit histories of files, as they are the possible places to find bug fixes and performance improvements.

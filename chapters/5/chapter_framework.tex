@@ -2,7 +2,29 @@
 \label{chapter:framework}
 
 \section{Introduction}
+In Chapter~\ref{chapter:idioms}, we identified \cop{} does not perform well in suggesting programming idioms. the scope of capability
+for AI-supported programming is uncertain. In this chapter, we try to address \textbf{RQ-1} (What are the current boundaries of code completion tools) with a Taxonomy of 5 stages to help access the current capabilities of \cop{}. 
 
+We explain each stage in the taxonomy and capabilities required by \cct{} for each stage to be completed. We try to delineate where current \cct{} are currently best
+able to perform, and where more complex software engineering tasks overwhelm them. 
+
+In Section~\ref{design}, we try to address \textbf{RQ-2} (Given the current boundary, how far is it from suggesting design decisions?). First, in Section~\ref{patterns}, we show an example scenario on how a \cct{} should suggest a design pattern in a given scenario with respect to human input. Second, in Section~\ref{gap}, we describe the challenges to move from code smells stage in the taxonomy to Design stage
+In Section~\ref{future}, we explain future directions to improve the current performance of \cop{} and ways to get to the design level in the taxonomy.
+
+\subsection{Motivation}
+To center our analysis, we leverage an analogous concept in the more developed (but still nascent) area of autonomous driving. 
+Koopman has adapted the SAE Autonomous Driving safety levels~\cite{sae} to those shown in Fig. \ref{fig:koopman_pyramid}. 
+The pyramid concept is derived from that of Maslow~\cite{Maslow1943}, such that addressing aspects on the top of the pyramid first require the satisfaction of aspects below. 
+For example, before being able to think about system safety (such as what to do in morally ambiguous scenarios), the vehicle must first be able to navigate its environment reliably (``Basic Driving Functionality'').
+
+We argue a similar hierarchy exists in \AISE{}. Before worrying about software architecture issues, that is, satisfying system quality attributes such as performance, \AISE{} needs to be able to exhibit ``basic programming functionality''. This basic functionality is where most research effort is currently concentrated, such as program synthesis, \cct{}, and automated bug repair.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{Figures/koopman_pyramid.png}
+    \caption{Koopman's Autonomous Vehicle Safety Hierarchy of Needs~\cite{koopman}. SOTIF = safety of the intended function.}
+    \label{fig:koopman_pyramid}
+\end{figure}
 
 \input{chapters/5/taxonomy}
 \input{chapters/5/syntax}

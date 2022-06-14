@@ -1,1 +1,11 @@
-\section{Syntax Level}
+\subsection{Syntax Level}
+\label{syntax}
+The Syntax level is the least abstract level. This includes the most basic programming functionality like syntax and code compilations. This level does not require the suggested code to successfully perform the task but to suggest code without any obvious errors like syntax errors.
+
+For example, considering a task of perform a sorting operation on a list of numbers, to satisfy this level of abstraction, \cct{} should suggest code that is syntactically correct without any compilation errors and the code is not required to perform the sorting operation correctly. This goal of this level is for a \cct{} to be able to suggest code without any syntax errors but not suggesting any relevant solutions.
+
+The capabilities required by a \cct{} to satisfy this level of abstraction are as follows
+\begin{enumerate}
+    \item Suggested code should not produce errors in code compilation.
+    \item Suggested code should be syntactically correct.
+\end{enumerate}
