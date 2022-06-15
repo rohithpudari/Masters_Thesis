@@ -1,6 +1,13 @@
 \subsection{Design}
 \label{design}
 
+for example, considering the task of sorting operation on a list of numbers, to satisfy this level of abstraction, \cct should suggest a syntactically correct list sorting code, using a algorithm which gives the best performance for that scenario like suggesting quick sort instead of bubble sort if it is a large set of numbers. The main goal of this level in the taxonomy is for a \cct{} to be able to pick the algorithms as per given scenario in its suggestions.
+
+The capabilities required by a \cct{} to satisfy this level of abstraction are as follows
+\begin{enumerate}
+    \item Satisfy requirements of syntax, correctness, and idioms level.
+    \item Picking and suggesting the best algorithm for a given scenario.
+\end{enumerate}
 
 \subsubsection{Design Patterns}
 \label{patterns}
