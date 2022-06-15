@@ -1,3 +1,4 @@
+\section{Results}
 \subsection{Code Smells}
 \label{bp}
 A good \AISE{} tool should only suggest code that passes code reviews by humans. We relied on the AirBNB JavaScript coding style guide~\cite{airbnb_code}, a widely used coding style and code review standard. 
@@ -5,9 +6,9 @@ A good \AISE{} tool should only suggest code that passes code reviews by humans.
 The AirBNB JavaScript coding style guide contains a variety of best practices. 
 Since, we are testing \cop{} for widely accepted practices and not project specific styling in JavaScript. We chose practices that were closer to design level rather than code level (e.g., logging practices rather than trailing comma use in Javascript).
 
-Using the methodology described in Section~\ref{methodology}, we picked 10 best practices in JavaScript from AirBNB JavaScript coding style guide~\cite{airbnb_code} shown in Table~\ref{tab:all_bp}. \cop{} suggested the recommended way for only one out of the ten standards we tested, i.e, Copilot did not have the recommended way as its top suggestion. Moreover, only 2 out of remaining 9 Best Practices had the Ideal way in \cop{} top 10 suggestions currently viewable. 
+Using the methodology described in Section~\ref{smells:methodology}, we picked 10 best practices in JavaScript from AirBNB JavaScript coding style guide~\cite{airbnb_code} shown in Table~\ref{tab:all_bp}. \cop{} suggested the recommended way for only one out of the ten standards we tested, i.e, Copilot did not have the recommended way as its top suggestion. Moreover, only 2 out of remaining 9 Best Practices had the Ideal way in \cop{} top 10 suggestions currently viewable. 
 
-\cop{} performed significantly worse than the Pythonic Idioms we showed in Section~\ref{secidioms}, As \cop{} is closed source, we cannot find the reason behind this but one could argue that lack of data for JavaScript compared to python could be a reason for this behaviour. 
+% \cop{} performed significantly worse than the Pythonic Idioms we showed in Section~\ref{secidioms}, As \cop{} is closed source, we cannot find the reason behind this but one could argue that lack of data for JavaScript compared to python could be a reason for this behaviour. 
 
 Table~\ref{tab:all_bp} shows the complete list of all the Best Practices we tested on \cop{} from the AirBNB Coding Style guide~\cite{airbnb_code} and the ranking of the Ideal way in \cop{} suggestions (if it exists).
 
