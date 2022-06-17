@@ -1,36 +1,20 @@
 \subsection{Design}
 \label{design}
+The top level in our taxonomy is Design, This level requires the suggested code satisfy all the previous levels of abstractions and suggest appropriate design practices for a given input in its suggestions.
 
-for example, considering the task of sorting operation on a list of numbers, to satisfy this level of abstraction, \cct should suggest a syntactically correct list sorting code, using a algorithm which gives the best performance for that scenario like suggesting quick sort instead of bubble sort if it is a large set of numbers. The main goal of this level in the taxonomy is for a \cct{} to be able to pick the algorithms as per given scenario in its suggestions.
-
-The capabilities required by a \cct{} to satisfy this level of abstraction are as follows
-\begin{enumerate}
-    \item Satisfy requirements of syntax, correctness, and idioms level.
-    \item Picking and suggesting the best algorithm for a given scenario.
-\end{enumerate}
+For example, considering the task of sorting operation on a list of numbers, to satisfy this level of abstraction, \cct should suggest a syntactically correct list sorting code, using a algorithm which gives the best performance for that scenario like suggesting quick sort instead of bubble sort if it is a large set of numbers. The main goal of this level in the taxonomy is for a \cct{} to be able to pick the algorithms as per given scenario in its suggestions.
 
 \subsubsection{Design Patterns}
 \label{patterns}
-
-\section{Gap Between Smells and Design}
-\label{gap}
-
-\section{Future Directions}
-\label{future}
-To solve complex software engineering challenges with AI, machine learning models must be able to capture design and module level concerns. 
+To satisfy design level \cct{} must be able to capture design and module level concerns. 
 These include recapturing design patterns (such as Observer) and architectural tactics (such as Heartbeat) to improve and personalize suggestions. 
 To do this, however, the training data must also use these patterns and best practices.
-The vision is for something like Copilot to be capable of suggesting patterns like Model-View-Controller (MVC) when prompted. 
-Being able to identify where design artifacts occur in the code, such as with pattern recovery~\cite{Keim2020}, is one avenue to explore. 
+The vision is for something like \cop{} to be capable of suggesting patterns like Model-View-Controller (MVC) when prompted. 
 
-Another research challenge is to move beyond token-level suggestions and work at code block or file level (e.g., a method or module). 
-Increasing the model input size to span multiple files and folders would improve suggestions. For example, when there are multiple files implementing the MVC pattern, Copilot should never suggest code where \textsf{Model} communicates directly with \textsf{View}. 
-\AISE{} tools will need to make suggestions in multiple program units to accommodate these more abstract design concerns.
-
-One suggestion is to use recent ML advances in helping language models `reason', such as the chain of thought process by Wang et al.~\cite{chain_of_thought}. 
-Chain-of-thought shows the model an example of reasoning, which then allows the model to reproduce the reasoning pattern on a different input.
-Such reasoning is common for design questions. 
-Shokri~\cite{shokri21} explored this with framework sketches.
-
-For example, using architectural scenarios helps (humans) reason about which tactic is most suitable for the scenario~\cite{kazman98}. This is a version of chain of thought for designing systems. 
-However, we have an imperfect understanding of the strategies that drive human design approaches for software~\cite{Arab2022}. 
+The capabilities required by a \cct{} to satisfy this level of abstraction are as follows
+\begin{enumerate}
+    \item Identify design and module level concerns in code files.
+    \item Suggest design patterns and architectural tactics when prompted.
+    \item Picking and suggesting the best applicable algorithm for a given scenario.
+    \item Satisfy requirements of all previous levels of abstractions.
+\end{enumerate}
