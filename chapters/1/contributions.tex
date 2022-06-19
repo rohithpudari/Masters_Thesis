@@ -1,10 +1,28 @@
 \section{Research Design and Methodology}
-Code completion tools are very useful, but are often limited to the generation of single elements (e.g. method calls and properties) and the usage of templates. Furthermore, too many recommendations can decrease the usefulness of the tool~\cite{Proksch2015}. 
-
-The current \cct{} approaches focus on programming-in-the-small \cite{DeRemer1976} i.e, on individual lines of code. 
+The current \cct{} approaches focus on programming-in-the-small~\cite{DeRemer1976} i.e, on individual lines of code. 
 Code language models have focused (effectively!) on source code as natural language~\cite{natural}.
 This models the software development task as predicting the next token or series of tokens.
 As Copilot's webpage says, the aim for Copilot is to produce ``safe and effective code [with] suggestions for whole lines or entire functions'' as ``your AI pair programmer''~\cite{Copilot-web}. 
 Thus support from language models is currently focused on software \textit{programming}, rather than software \emph{engineering} (in-the-large).
 
+GitHub's Copilot is one such \cct{} that can generate code in a variety of languages
+given some context such as comments, function names, and surrounding code. As
+GitHub Copilot is the largest and most capable such model currently available. We base all our findings on GitHub's Copilot as a representative of \cct{} for this study.
+
+We begin by sampling 10 coding scenarios for detecting code smells from AirBNB JavaScript coding style guide~\cite{airbnb_code}, a widely used coding style and code review standard. We then compare and contrast Copilot's code suggestion for each scenario and report if Copilot suggested the best practice listed in AirBNB JavaScript coding style guide. 
+We also sampled top 10 language idioms used in open source projects from Alexandru et al.~\cite{Alexandru2018} and then compare and contrast Copilot's code suggestion for each idiom and report if Copilot suggested the idiom listed in Alexandru et al.~\cite{Alexandru2018}. We base our taxonomy of software abstraction hierarchies on the findings from Copilot suggestions on best practices and language idioms.
+
+We then report on the current limitations of Copilot as a representative \cct{} and introduce a taxonomy of software abstraction hierarchies (see Figure~\ref{fig:taxonomy}), inspired from an analogous concept in the more developed (but still nascent) area of autonomous driving. We also present an example coding scenario for every level of abstraction in our taxonomy showing the requirements to be fulfilled by \cct{} to satisfy that level of abstraction.
+
+We conclude by providing guidelines for future development of \cct{} to reach design level of abstraction in our taxonomy and discuss the limitations of our work. 
+
 \section{Contributions}
+
+This thesis contributes the following:
+
+\begin{itemize}
+    \item We demonstrate the current limitations of Copilot's code suggestions. We show that Copilot does not perform well in suggesting best practices and language idioms. We present our discussion on challenges with using \cct{} like Copilot.
+    \item We release our coding experiments on Copilot for best practices and language idioms. We make this available in our \repl{}.
+    \item Using the findings from Copilot's code suggestions on best practices and language idioms, we present a taxonomy is a software abstraction hierarchy where ‘basic programming functionality’ such as code compilation and syntax checking is at the least abstract level, including the set of requirements for \cct{} to satisfy each level of abstraction.
+    \item Based on our experiences in this study, we present future directions for moving beyond code completion to AI-supported software engineering which will require an AI system that can, among other things, understand how to avoid code smells, to follow language idioms, and eventually propose rational software designs.
+\end{itemize}
