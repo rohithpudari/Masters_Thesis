@@ -1,5 +1,13 @@
-\section{\cct{} Journey}
+\section{Evolution of \cct{}}
+A variety of data science and machine learning methodologies were applied in the field of \cct{}. The following is an overview of current state-of-the-art methodologies for both text and code completion, as well as how these approaches have evolved over time.
 
-\subsection{Before Copilot}
+\subsection{Statistical language Models}
+Statistical language models (LMs) are mathematical models that express a probability distribution across a set of words. From a training dataset, LMs learn the probability of word occurrences. LMs can predict the next word from a sequence of words based on the probability distribution of its training data. Most common LMs like N-grams are currently utilised to support many complicated models in modern approaches like Neural Language Models (NLMs).
 
-\subsection{Alternatives to Copilot}
+\subsubsection{N-grams}
+N-grams~\cite{ngram} are probabilistic language models represented by an (n-1)-order Markov source (a sequence of n-1 of random variables defined by a Markov chain). A Markov chain is based on the idea that the probability of the next word depends only on its n-1 predecessors. Since this property mostly holds for natural language, Markov source is a good approach for modeling natural language. In modern natural language processing applications, N-grams are rarely employed as a stand-alone solution in modern natural language processing applications, but rather as a support for a more complex model, which leads to issues like out of vocabulary (OOV) making them unsuitable for our domain. However, code completion tools tools like CACHECA~\cite{cacheca} and SLANG~\cite{slang} are based on N-grams.
+
+\subsection{Vector Word Representations}
+Each word in the vocabulary is represented as a real-valued feature vector in a vector word representation. Words that are semantically similar in such forms are similar. Vector word representations play an important role in Neural language models~\cite{mnlm}.
+ 
+N-grams are a simple statistical LM that is simple to comprehend and compute. However, It has no way of modeling multi sentence context and it cannot generalize to unseen data. Neural language models are introduced to tackle the drawbacks of LMs.
