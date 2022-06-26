@@ -1,7 +1,7 @@
 \section{Problem Statement and Research Questions}
 The overarching goal of this study is to:
 \begin{quote}
-    Identify the boundaries of the capabilities of GitHub Copilot. Toward this goal, we compare Copilot code suggestions against best practices and language Idioms. Additionally, we introduce a simple taxonomy of software abstraction hierarchies to show the capabilities of current \cct{}. 
+    Identify the boundaries of the capabilities of GitHub Copilot. Toward this goal, we compare Copilot code suggestions against language idioms and code smells. Additionally, we introduce a simple taxonomy of software abstraction hierarchies to show different capability levels of \cct{}. 
 \end{quote}
 
 As discussed in the previous sections, The capabilities of current \cct{} like Copilot are unknown, identifying the limitations of \cct{} would help the users use the tool effectively and focus more on the tasks \cct{} are shown to be not useful. The objective of this study is to achieve a better understanding of the areas Copilot performs better than a human and the areas where Copilot performs worse than a human. We conduct an exploratory study with the following research objectives:
@@ -12,14 +12,14 @@ As discussed in the previous sections, The capabilities of current \cct{} like C
   \textbf{Approach -} We use GitHub's Copilot as a representative for \cct{}. We explore Copilot's code suggestions for code smells and usage of language idioms. We conduct additional investigation to determine the current boundaries of Copilot by introducing a taxonomy of software abstraction hierarchies where ‘basic programming functionality’ such as code compilation and syntax checking is at the least abstract level. Software architecture analysis and design is at the most abstract level. 
   
   \item[\textbf{RQ-1.1: }]
-  \textbf{How do \cct{} manage manage to write non-smelly code?} \\
-\textbf{Approach -} We examine Copilot code suggestions on 10 different best practices sampled from AirBNB JavaScript coding style guide~\cite{airbnb_code}. We investigate how Copilot's top code suggestion compares to the best practices in AirBNB JavaScript coding style guide~\cite{airbnb_code}. Additionally, we report if the best practice is listed in any of the 10 viewable suggestions from Copilot. 
-  
-  \item[\textbf{RQ-1.2: }]
   \textbf{How do \cct{} manage programming Idioms?} \\
   \textbf{Approach -} We examine Copilot code suggestions on top 10 idioms used in open source projects sampled from work of Alexandru et al.~\cite{Alexandru2018}, which identified idioms from presentations given by renowned Python developers. We investigate how Copilot's top code suggestion compares to Python idioms from Alexandru et al.~\cite{Alexandru2018}. In addition, we report if the idiom is listed in any of the 10 viewable suggestions from Copilot.
   
+  \item[\textbf{RQ-1.2: }]
+  \textbf{How do \cct{} manage manage to write non-smelly code?} \\
+\textbf{Approach -} We examine Copilot code suggestions on 10 different best practices sampled from AirBNB JavaScript coding style guide~\cite{airbnb_code}. We investigate how Copilot's top code suggestion compares to the best practices in AirBNB JavaScript coding style guide~\cite{airbnb_code}. Additionally, we report if the best practice is listed in any of the 10 viewable suggestions from Copilot. 
+ 
   \item[\textbf{RQ-2: }]
   \textbf{Given the current boundary, how far is it from suggesting design decisions which seem much beyond the boundary??} \\
-  \textbf{Approach -} Based on our findings in RQ-1, we discuss how far current \cct{} are from the design level in our taxonomy. We look at current limitations of Copilot and provide recommendations on how to make current \cct{} reach design abstraction level. Additionally, we report on ethical considerations, explainability and control of tools like Copilot. 
+  \textbf{Approach -} Based on our findings in RQ-1, we discuss how far current \cct{} are from the design level in our taxonomy. We look at current limitations of Copilot and provide recommendations on how to make current \cct{} reach design abstraction level. Additionally, we report on ethical considerations, explainability and control of \cct{} like Copilot. 
 \end{enumerate}
