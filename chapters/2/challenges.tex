@@ -12,7 +12,7 @@ As it is trained on public data collected in May 2020 from 50 million public rep
 %It does not have any data uploaded to GitHub after that date and any data from useful sources like documentation and Stack Overflow to improve its suggestions from commonly occurring bugs.
 Any software flaws present in large numbers on GitHub will tend to dominate the learning of the model.
 
-But these challenges are not surprising, and have straightforward fixes like a filter that was introduced by GitHub to suppress Copilot suggestions containing code that matches public code on GitHub. These Fixes might include better data engineering and filtering, to remove known problems. This is already part of the training of these large language models, although the exact process has not been publicly disclosed.
+But these challenges are not surprising, and have straightforward fixes. These Fixes might include better data engineering and filtering, to remove known problems like a filter that was introduced by GitHub to suppress Copilot suggestions containing code that matches public code on GitHub, although the exact filtering process has not been publicly disclosed.
 Similarly, it seems viable to conduct security scans or linting runs prior to making a suggestion, in order to remove obvious problems like SQL injection. 
 Clone detection techniques can help find places where code violates copyright. 
 Better machine learning approaches, using active learning or fine-tuning, might help learn local lessons~\cite{Menzies2013} for customization in the case of identifier naming or formatting.

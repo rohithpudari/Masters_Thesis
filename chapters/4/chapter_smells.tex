@@ -18,12 +18,12 @@ We relied on the AirBNB javascript coding style guide~\cite{airbnb_code}, a wide
 
 \section{Methodology}
 \label{smells:methodology}
-In this Section, we explain the methodology we used to address \textbf{RQ-1.2} (How do \cct{} manage to suggest non-smelly code?), including how the best practices were sampled (Section~\ref{smells:sampling}), what was the input for Copilot (Section~\ref{smells:input}) and how the Copilot suggestions are evaluated (Section~\ref{smells:evaluation}). All of the following analysis was carried out using Copilot extension in Visual Studio Code. We use the most recent stable release of Copilot extension (version number 1.30.6165) in Visual Studio Code.
+In this Section, we explain the methodology we used to address \textbf{RQ-1.2} (How do \cct{} manage to suggest non-smelly code?), including how the best practices were sampled (section~\ref{smells:sampling}), what was the input for Copilot (section~\ref{smells:input}) and how the Copilot suggestions are evaluated (section~\ref{smells:evaluation}). All of the following analysis was carried out using Copilot extension in visual studio code. We use the most recent stable release of Copilot extension (version number 1.30.6165) in visual studio code.
 
 \subsection{Sampling Approach}
 \label{smells:sampling}
 The AirBNB JavaScript coding style guide~\cite{airbnb_code} contains a comprehensive list of best practices covering nearly every aspect of javascript coding like objects, arrays, modules, iterators, but it also includes project specific styling like naming conventions, commas, comments.
-Since, we are testing Copilot for widely accepted practices and not project specific styling in javascript. We chose best practices that were closer to design level rather than code level (e.g., logging practices rather than trailing comma use in javascript). 
+Since, we are testing Copilot for widely accepted practices and not project specific styling in javascript. We chose best practices that were closer to design level rather than code level. For example, selecting logging practices as a sample coding standard rather than trailing comma use in javascript as a coding standard.
 
 \subsection{Study Setup}
 
@@ -33,7 +33,7 @@ The input to Copilot consisted of the best practice title as the first comment t
 
 \subsubsection{Evaluation of Copilot suggestions}
 \label{smells:evaluation}
-If Copilot suggested the best practice in the first suggestion, we considered Copilot followed the coding style guide. we assume that \cct{} like Copilot are productivity tools and user should be saving time as opposed to writing the optimal way without using \cct{}, scrolling through all the suggestions to deduce the best practice that follows the coding style guide defeats this purpose. 
+If Copilot suggested the best practice as its first suggestion, we considered Copilot followed the coding style guide. we assume that \cct{} like Copilot are productivity tools and user should be saving time as opposed to writing the optimal way without using \cct{}, scrolling through all the suggestions to deduce the best practice that follows the coding style guide defeats this purpose. 
 For this reason, We restricted ourselves to first suggestion. However, we do note if the best practice appeared any of the top 10 suggestions currently viewable in Copilot interface. 
 
 \input{chapters/4/best_practices}
