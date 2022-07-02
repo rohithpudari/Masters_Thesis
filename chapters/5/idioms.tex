@@ -1,7 +1,9 @@
 \subsection{Paradigms and Idioms}
-The paradigms and idioms is the mid level of abstraction in our taxonomy. This level requires the suggested code satisfy all the previous levels of abstractions and use common language idioms in its suggestions. 
+The paradigms and idioms is the mid level of software abstraction in our taxonomy. This level requires the suggested code satisfy all the previous levels of abstractions and use common paradigms and language idioms in its suggestions, these include common practices of performing a task in a programming language. 
+For example, considering the task of sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using idioms like best way to swap items in a list~(line 8 in fig~\ref{fig:idioms}) instead of using another temp variable~(shown in fig~\ref{fig:correctness}). 
 
-For example, considering the task of sorting operation on a list of numbers, to satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using a well know algorithm like quick sort or bubble sort. The main goal of this level in the taxonomy is for a \cct{} to be able to use the current best practices and algorithms in its suggestions.
+The main goal of this level in the taxonomy is for \cct{} to be able to detect and use the commonly used practices occur in public code in its code suggestions to a problem.
+Figure~\ref{fig:idioms} shows the example and the suggestions from \cct{} at this abstraction level.
 
 \begin{figure}[hbt!]
     \centering
@@ -10,9 +12,10 @@ For example, considering the task of sorting operation on a list of numbers, to 
     \label{fig:idioms}
 \end{figure}
 
-The capabilities required by a \cct{} to satisfy this level of abstraction are as follows
+The capabilities required by \cct{} to satisfy this level of abstraction are as follows:
 \begin{enumerate}
-    \item Use well known paradigms and language idioms whenever possible in suggesting a solution for a programming tasks.
+    \item Identify common patterns like paradigms and language idioms in public code~(training data).
+    \item Use paradigms and language idioms in suggesting solutions for a problem.
     \item Satisfy requirements of all the levels below paradigms and idioms in our taxonomy.
 \end{enumerate}
 
