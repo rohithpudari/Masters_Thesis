@@ -1,9 +1,12 @@
-\section{Limitations}
+\section{Threats to Validity}
 \label{limitations}
 Copilot and its underlying OpenAI Codex LLM are not open source. 
 %Accessing them is restricted to API calls. General users cannot directly examine the model. 
 We base our conclusions on API results, which makes versioning and clarity challenging. We use the current stable Copilot extension release (version: 1.30.6165) in Visual Studio Code. %The manual effort needed to query Copilot restricts the ability to use large datasets.
 
+\subsection{Internal Validity}
+
+\subsection{External Validity}
 Copilot is sensitive to user inputs. This hurts replicability as a different formulation of the problem might produce a different set of suggestions. 
 Thus a reasonable concern is that our (human) input is unfair to Copilot, and with some different inputs, the tool might generate the correct idiom. 
 For replicability, we archived all examples in our replication package at \repl{}.
@@ -18,6 +21,6 @@ More importantly, a lack of suggestion stability seems to come with its own set 
 %
 %OpenAI and open source
 
-\section{Ethical Considerations}
+\subsection{Ethical Considerations}
 \label{ethics}
 Codex imports packages at different rates~\cite{copilot}, which could advantage some authors over others. As Copilot is both a \emph{black-box} and \emph{closed-source}, One can only speculate on the reasoning behind each suggestion.  For example, what sort algorithm to use. Not just a technical question but much more challenging ethically on why a particular algorithm is suggested than a flash fill kind such as a coding contest question.

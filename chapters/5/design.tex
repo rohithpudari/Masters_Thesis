@@ -1,16 +1,10 @@
 \subsection{Design}
 \label{design}
-The top level in our taxonomy is Design, This level requires the suggested code satisfy all the previous levels of abstractions and suggest appropriate design practices for a given input in its suggestions.
+Design level is the top level of software abstraction in our taxonomy This level requires the suggested code suggest rational design practices in its code suggestions for a problem and satisfy all the previous levels of abstractions. Design practices are dependent on many factors like requirements, \cct{} should be capable of considering all the relevant factors before suggesting a design practice.
 
-For example, considering the task of sorting operation on a list of numbers, to satisfy this level of abstraction, \cct should suggest a syntactically correct list sorting code, using a algorithm which gives the best performance for that scenario like suggesting quick sort instead of bubble sort if it is a large set of numbers. The main goal of this level in the taxonomy is for a \cct{} to be able to pick the algorithms as per given scenario in its suggestions.
+For example, considering the task of performing a sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using an algorithm which gives the best performance for that particular input scenario like suggesting quick sort algorithm~(avg time complexity = nlogn) instead of bubble sort algorithm~(avg time complexity = n\textsuperscript{2}).
 
-\subsubsection{Design Patterns}
-\label{patterns}
-To satisfy design level \cct{} must be able to capture design and module level concerns. 
-These include recapturing design patterns (such as Observer) and architectural tactics (such as Heartbeat) to improve and personalize suggestions. 
-To do this, however, the training data must also use these patterns and best practices.
-The vision is for something like Copilot to be capable of suggesting patterns like Model-View-Controller (MVC) when prompted. 
-
+The main goal of this level in the taxonomy is for a \cct{} to be able to pick algorithms and suggest design choices as per given scenario in its suggestions.
 The capabilities required by a \cct{} to satisfy this level of abstraction are as follows
 \begin{enumerate}
     \item Identify design and module level concerns in code files.

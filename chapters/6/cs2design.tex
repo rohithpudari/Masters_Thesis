@@ -1,6 +1,17 @@
-\section{Evolution of Best Practices Over Time}
+\section{Code Smells to Design level}
+\label{cs2design}
+
+
+\subsection{Design Patterns}
+\label{patterns}
+To satisfy design level, \cct{} should be capable of capturing design and module level concerns. 
+These include recapturing design patterns~(such as Observer) and architectural tactics~(such as Heartbeat) to improve and personalize suggestions.
+To do this, however, the training data must also use these patterns and best practices.
+The vision for a \cct{} like Copilot is to be capable of suggesting patterns like Model-View-Controller (MVC) when prompted.
+
+\subsection{Evolution of design over time}
 \label{evolution}
-Best Practices evolve over time. \cct{} need to update their suggestions at regular intervals to reflect the changes in Best Practices. 
+Design practices evolve over time. \cct{} need to update their suggestions at regular intervals to reflect the changes in design practices. 
 
 For example, in JavaScript, callback api was considered as the best practice in the past to achieve concurrency which were replaced by promises. Copilot suggested code which is specifically mentioned in the JavaScript documentation as a bad practice and anti-pattern\footref{docs}.
 
