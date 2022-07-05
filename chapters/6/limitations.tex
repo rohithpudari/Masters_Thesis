@@ -2,16 +2,20 @@
 \label{limitations}
 Copilot and its underlying OpenAI Codex LLM are not open source. 
 %Accessing them is restricted to API calls. General users cannot directly examine the model. 
-We base our conclusions on API results, which makes versioning and clarity challenging. We use the current stable Copilot extension release (version: 1.30.6165) in Visual Studio Code. %The manual effort needed to query Copilot restricts the ability to use large datasets.
+We base our conclusions on API results, which makes versioning and clarity challenging. There are several threats to the validity for the work presented in this thesis. In this section, we summarize the threats and also present the steps taken to mitigate them. We use the stable Copilot extension release (version: 1.30.6165) in Visual Studio Code. %The manual effort needed to query Copilot restricts the ability to use large datasets.
 
 \subsection{Internal Validity}
-
-\subsection{External Validity}
 Copilot is sensitive to user inputs. This hurts replicability as a different formulation of the problem might produce a different set of suggestions. 
 Thus a reasonable concern is that our (human) input is unfair to Copilot, and with some different inputs, the tool might generate the correct idiom. 
 For replicability, we archived all examples in our replication package at \repl{}.
 %\neil{can we try this? }\rohith{idioms are mostly one lined, and longer inputs/suggestions could be described as bad practices/design smells}
 
+\subsection{Construct Validity}
+The taxonomy of software abstraction hierarchy presented in this thesis relies on our view of software abstractions.
+Other approaches for classifying software abstractions~(such as motivation of the user for initiating \cct{}) might result in different taxonomy.
+The hierarchy of software abstractions presented in this thesis relies on our understanding of software abstractions, as well as the results of Copilot code suggestions on language idioms and code smells. Further, we present our results using Python and JavaScript. It is possible that using some other programming language or \cct{} might have different results.
+
+\subsection{Potential Bias}
 Our intention is admittedly to show where Copilot is not able to consistently generate the preferred answer. We biased our evaluation to highlight this by choosing input that simulates what a less experienced programmer might enter. 
 But we argue this is reasonable: for one, these are precisely the developers likely to use Copilot suggestions, and unlikely to know the idiomatic usage.
 More importantly, a lack of suggestion stability seems to come with its own set of challenges, equally important to understand.% (to use an analogy, we would expect all self-driving vehicles to make the similar choices when confronted with similar circumstances). 

@@ -1,6 +1,29 @@
 \section{Implications}
+% Practical implications can be separated into two categories, pre-training and at suggestion time. 
+\subsection{Implications for practice}
+For \emph{pre-training the LLM} (e.g., Codex), \AISE{} tools will need higher-quality training data. This might be addressed by carefully engineering training examples and filtering out known flaws, code smells, and bad practices. Careful data curation seems to be part of the approach already~\cite{alphacode}. However, there is little clarity on how this process happens and how to evaluate suggestions, particularly for non-experts. One approach is to add more verified sources like well known books and code documentation pages to follow the best practices. 
+Pre-training might rank repositories for training input according to code quality (e.g., only repositories with acceptable coding standards). %The goal here is to make good practices more frequent than the bad ones to make Copilot suggest good code as its top suggestion.
 
-\subsection{Research implications}
+For \emph{code completion time}, \AISE{} tools could collaborate with, or be used in conjunction with, existing tools for code smells like SonarQube\footnote{https://www.sonarqube.org} or other code review bots, to potentially improve the quality of suggestions. Since developers are increasingly expecting to wait for a code suggestion, the returned results could be filtered for quality. Active learning approaches which learn a user's context (e.g., the company coding style) would also improve suggestion acceptability. %Many of these insights can be taken from existing knowledge in the information retrieval domain. 
 
-\subsection{Practical implications}
+% As code completion tools are used for productivity, they should improve the ranking system to make best solutions appear as top suggestion (it would take more time to go through all suggestions)
+% Recommendations to improve \AIDE{}:
+% \begin{enumerate}
+%     \item add more verified sources like books and documentations to training data.
+%     \item perform code smell detection and vulnerability checks before every suggestion and rank them accordingly.
+%     \item ranking suggestions based on repository (source of suggestion) popularity.
+% \end{enumerate}
 
+\subsection{Implications for researchers}
+\subsubsection{Moving Beyond Tokens}
+Another research challenge is to move beyond token-level suggestions and work at code block or file level (e.g., a method or module). 
+Increasing the model input size to span multiple files and folders would improve suggestions. For example, when there are multiple files implementing the MVC pattern, Copilot should never suggest code where \textsf{Model} communicates directly with \textsf{View}. 
+\AISE{} tools will need to make suggestions in multiple program units to accommodate these more abstract design concerns.
+
+One suggestion is to use recent ML advances in helping language models `reason', such as the chain of thought process by Wang et al.~\cite{chain_of_thought}. 
+Chain-of-thought shows the model an example of reasoning, which then allows the model to reproduce the reasoning pattern on a different input.
+Such reasoning is common for design questions. 
+Shokri~\cite{shokri21} explored this with framework sketches.
+
+For example, using architectural scenarios helps (humans) reason about which tactic is most suitable for the scenario~\cite{kazman98}. This is a version of chain of thought for designing systems. 
+However, we have an imperfect understanding of the strategies that drive human design approaches for software~\cite{Arab2022}. 

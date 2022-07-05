@@ -2,9 +2,14 @@
 \label{chapter:discussion}
 
 \section{Introduction}
-In section~\ref{cs2design}, we try to address \textbf{RQ-2} (Given the current boundary, how far is it from suggesting design decisions?) with a discussion on the complex nature of design decisions involving many factors, making it difficult for \cct{} like Copilot detect the information from code files and suggest design decisions to satisfy the top abstraction level of our taxonomy.
+We began this thesis with an analysis of Copilot code suggestions on language idioms and code smells, to understand the current capabilities of \cct{} like Copilot.
+In this chapter, we try to address \textbf{RQ-2} (Given the current boundary, how far is it from suggesting design decisions?) with a discussion on the complex nature of design decisions involving many factors, making it difficult for \cct{} like Copilot to detect the information from code files and suggest design decisions to satisfy the top abstraction level of our taxonomy.
 
-Further, in section~\ref{evolution}, we provide a detailed discussion on how best practices change over time with an example from Asynchronous JavaScript and outline the difficulties of a \cct{} to keep updating its suggestions and reflect the current best practice.
+Next, in section~\ref{cs2design} we discuss our vision for \cct{} like Copilot to satisfy design level in our taxonomy, and outline the difficulty its underlying Codex LLM approach might run into.
+Further, in section~\ref{evolution} we discuss how design choices change over time and outline the difficulties of \cct{} like Copilot to keep updating its suggestions and reflect the current design practices.
+Furthermore, having established the software abstraction hierarchy to help assess the capabilities of \cct{}, in section~\ref{limitations} we report on the threats to the validity of the research presented in this thesis and the steps we have taken to mitigate these threats.
+
+We conclude this chapter by discussing some of the ways in which this study could be extended further, some implications for researchers and practitioners, and some future works that our study enables~(section~\ref{future}).
 
 \input{chapters/6/cs2design}
 \input{chapters/6/limitations}

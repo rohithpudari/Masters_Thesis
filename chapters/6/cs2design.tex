@@ -1,18 +1,21 @@
-\section{Code Smells to Design level}
+\section{\cct{} to design level}
 \label{cs2design}
-
-
-\subsection{Design Patterns}
-\label{patterns}
+% \subsection{Design Patterns}
+% \label{patterns}
 To satisfy design level, \cct{} should be capable of capturing design and module level concerns. 
-These include recapturing design patterns~(such as Observer) and architectural tactics~(such as Heartbeat) to improve and personalize suggestions.
+These include capturing design patterns~(such as Observer) and architectural tactics~(such as Heartbeat) to improve and personalize suggestions.
 To do this, however, the training data must also use these patterns and best practices.
+Currently, Copilot does not support multi-file input, So it is not possible to evaluate its design suggestions, as software development process may include multiple folders with a file structure. 
+
+\cct{} should be able to adapt their suggestions to context specific issues such as variable naming conventions and formatting. 
+This would be challenging as the existing guidelines are not standard in this space and mostly depend on context.
 The vision for a \cct{} like Copilot is to be capable of suggesting patterns like Model-View-Controller (MVC) when prompted.
 
 \subsection{Evolution of design over time}
 \label{evolution}
 Design practices evolve over time. \cct{} need to update their suggestions at regular intervals to reflect the changes in design practices. 
+For example, in JavaScript, callback api was considered as the best practice in the past to achieve concurrency which were replaced by promises. 
+While testing, Copilot suggested code which is specifically mentioned in the JavaScript documentation as a common bad practice and anti-pattern\footref{docs}.
 
-For example, in JavaScript, callback api was considered as the best practice in the past to achieve concurrency which were replaced by promises. Copilot suggested code which is specifically mentioned in the JavaScript documentation as a bad practice and anti-pattern\footref{docs}.
-
-Bad Practices in using promises for asynchronous JavaScript like not returning promises after creation, forgetting to terminate chains without catch statement, which are explained in documentation\footnote{\label{docs}\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises}} and StackOverflow\footnote{\url{https://stackoverflow.com/questions/30362733/handling-errors-in-promise-all/}} are not known to Copilot and suggested code with those common anti-patterns as they could have occurred more frequently in Copilot training data. However, this is beyond the scope of this study and will be part of future work.
+Bad Practices in using promises for asynchronous JavaScript like not returning promises after creation, forgetting to terminate chains without catch statement, which are explained in documentation\footnote{\label{docs}\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises}} and StackOverflow\footnote{\url{https://stackoverflow.com/questions/30362733/handling-errors-in-promise-all/}} are not known to Copilot and suggested code with those common anti-patterns as they could have occurred more frequently in Copilot training data. 
+However, this is beyond the scope of this study and will be part of future work.
