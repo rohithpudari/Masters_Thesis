@@ -2,17 +2,20 @@
 The current \cct{} approaches focus on programming-in-the-small~\cite{DeRemer1976} i.e, on individual lines of code. 
 Code language models have focused (effectively!) on source code as natural language~\cite{natural}.
 This models the software development task as predicting the next token or series of tokens.
-As Copilot's webpage says, the aim for Copilot is to produce ``safe and effective code [with] suggestions for whole lines or entire functions'' as ``your AI pair programmer''~\cite{Copilot-web}. 
-Thus support from language models is currently focused on software \textit{programming}, rather than software \emph{engineering} (in-the-large).
 
-GitHub's Copilot is one such \cct{} that can generate code in a variety of languages
-given some context such as comments, function names, and surrounding code. As
-GitHub Copilot is the largest and most capable such model currently available. We base all our findings on GitHub's Copilot as a representative of \cct{} for this study.
+Introduced in June 2021, GitHub's Copilot~\cite{Copilot-web} is an in-IDE recommender system that leverages OpenAI's Codex neural language model (NLM)~\cite{copilot} which uses a GPT-3 model~\cite{Gpt3} and is then fine-tuned on code from GitHub to generate code suggestions that are uncannily effective and are able to perform above human average on programming contest problems~\cite{empirical_eval}. As Copilot's webpage says, the aim for Copilot is to produce ``safe and effective code [with] suggestions for whole lines or entire functions'' as ``your AI pair programmer''~\cite{Copilot-web}. 
+Thus, support from language models is currently focused on software \textit{programming}, rather than software \emph{engineering} (in-the-large).
+Copilot can generate code in a variety of languages given some context such as comments, function names, and surrounding code. Copilot is the largest and most capable such model currently available. We perform all our experiments on GitHub Copilot as a representative for \cct{}.
+% GitHub's Copilot is one such \cct{} that can generate code in a variety of languages
+% given some context such as comments, function names, and surrounding code. As
+% GitHub Copilot is the largest and most capable such model currently available. We base all our findings on GitHub's Copilot as a representative of \cct{} for this study.
 
-We begin by sampling 10 coding scenarios for detecting code smells from AirBNB javascript coding style guide~\cite{airbnb_code}, a widely used coding style and code review standard. We then compare and contrast Copilot's code suggestion for each scenario and report if Copilot suggested the best practice listed in AirBNB JavaScript coding style guide. 
-We also sampled top 10 language idioms used in open source projects from Alexandru et al.~\cite{Alexandru2018} and then compare and contrast Copilot's code suggestion for each idiom and report if Copilot suggested the idiom listed in Alexandru et al.~\cite{Alexandru2018}. We base our taxonomy of software abstraction hierarchies on the findings from Copilot suggestions on language idioms and code smells.
+We begin by sampling top 25 language idioms used in open source projects from Alexandru et al.~\cite{Alexandru2018} and then compare and contrast Copilot's code suggestion for each idiom and report if Copilot suggested the idiom listed in Alexandru et al.~\cite{Alexandru2018}. 
+We also sampled 25 coding scenarios for detecting code smells from AirBNB javascript coding style guide~\cite{airbnb_code}, a widely used coding style and code review standard. We then compare and contrast Copilot's code suggestion for each scenario and report if Copilot suggested the best practice listed in AirBNB JavaScript coding style guide. 
+We base our taxonomy of software abstraction hierarchies on the findings from Copilot suggestions on language idioms and code smells.
 
-We then report on the current limitations of Copilot as a representative \cct{} and introduce a taxonomy of software abstraction hierarchies (see Figure~\ref{fig:taxonomy}), inspired from an analogous concept in the more developed (but still nascent) area of autonomous driving. We also present an example coding scenario for every level of abstraction in our taxonomy showing the requirements to be fulfilled by \cct{} to satisfy that level of abstraction.
+We then report on the current limitations of Copilot as a representative \cct{} and introduce a taxonomy of software abstraction hierarchies (see figure~\ref{fig:taxonomy}), inspired from an analogous concept in the more developed (but still nascent) area of autonomous driving. 
+We also present an example coding scenario for every level of abstraction in our taxonomy showing the requirements to be fulfilled by \cct{} to satisfy that level of abstraction.
 
 We conclude by providing discussion for future development of \cct{} to reach design level of abstraction in our taxonomy and discuss the limitations of our work. 
 
