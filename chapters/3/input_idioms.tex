@@ -1,0 +1,26 @@
+\section{Pythonic Idioms}
+The definition for the term \emph{Pythonic} in Python found in official Python glossary\footnote{\url{https://docs.python.org/3/glossary.html\#term-pythonic}} as follows:
+
+\begin{quote}
+    An idea or piece of code which closely follows the most common idioms of the Python language, rather than implementing code using concepts common to other languages. For example, a common idiom in Python is to loop over all elements of an iterable using a for statement. Many other languages do not have this type of construct, so people unfamiliar with Python sometimes use a numerical counter instead, as opposed to the cleaner, pythonic method.
+\end{quote}
+
+This definition indicates a broad meaning, referring to both concrete code, but also \emph{Ideas} in general sense. Many Python developers argue that coding the \emph{pythonic way} is the most accepted way to code by the Python community~\cite{Alexandru2018}. We consider an \emph{idiom} to be any reusable abstraction that makes Python code more readable by shortening or added syntactic sugar. Idioms can also be more efficient than a basic solution and some idioms are both more readable and more efficient.
+
+We sampled idioms from the work of Alexandru et al.~\cite{Alexandru2018}, which identified idioms from presentations given by renowned Python developers that frequently mention Idioms, e.g., Hettinger~\cite{hettinger} and Jeff Knupp~\cite{knupp} and popular Python books, such as ``Pro Python''~\cite{Alchin2010}, ``Fluent Python''~\cite{fluent}, ``Expert Python Programming''~\cite{expert}.
+
+% \section{Methodology}
+% \label{methodology}
+% In this section, We explain the methodology we used to address \textbf{RQ-1.1} (How do \cct{} manage programming idioms?), including how the idioms were sampled (section~\ref{sampling}), what was the input for Copilot (section~\ref{input}) and how Copilot suggestions are evaluated (section~\ref{evaluation}). All of the following analysis was carried out using Copilot extension in visual studio code. We use the most recent stable release of Copilot extension (version number 1.30.6165) in visual studio code.
+
+\subsection{Sampling Approach}
+\label{sampling}
+To give the best chance for Copilot to suggest the optimal way, we sampled the top ten most frequent idioms used in open source projects. So that, Copilot will have the optimal way more frequently in its training data. However, Copilot is closed source and we cannot determine if the frequency of code snippet in training data affects Copilot suggestions in any way. Research by GitHub shows that Copilot can sometimes recite from its training data in ``generic contexts"\footnote{\url{https://github.blog/2021-06-30-github-copilot-research-recitation/}}, which may lead to potential challenges like licence infringements~(shown in section~\ref{challenges}). Sampling the most frequently used idioms will also help understand if Copilot can recite idioms present in its training data~(GitHub public repositories), which is a desirable feature for \cct{}.
+
+% \subsection{Study Setup}
+
+
+
+% \subsubsection{Evaluation of Copilot suggestions}
+% \label{evaluation}
+% If Copilot suggested the idiomatic way as its first suggestion, we considered Copilot followed the recommended idiomatic approach. we assume that \cct{} like Copilot are productivity tools and user should be saving time as opposed to writing the optimal way without using \cct{}, scrolling through all the suggestions to deduce the optimal way defeats this purpose. For this reason, we restricted ourselves to first suggestion. However, we do note if the idiomatic way appeared any of the top 10 suggestions currently viewable in Copilot interface. 
