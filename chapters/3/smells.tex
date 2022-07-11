@@ -8,10 +8,11 @@ Copilot suggested the best practice from the coding guide for only one out of th
 
 Table~\ref{tab:all_bp} shows the complete list of all the coding standards we tested on Copilot sampled from the AirBNB Coding Style guide~\cite{airbnb_code} and the ranking of the best practice in Copilot suggestions (if it exists).
 
-\begin{table}[ht]
+\begin{table}[hbt]
+
+    \begin{tabular}{|c|c|}
+        \hline
     \centering
-    \begin{tabular}{|L|c|}
-    \hline
          \textbf{Best Practice  Title} & \textbf{Copilot Suggestion Matched?} \\
          & (out of 10 suggestions) \\
          \hline
@@ -31,10 +32,40 @@ Table~\ref{tab:all_bp} shows the complete list of all the coding standards we te
          \hline
          Switch case usage & No \\
          \hline
-         Return value from Function with a condition check & No \\
+         Return value after condition & No \\
          \hline
          Converting Array-like object to an Array  & No \\
          \hline
+         Create two references & 5\textsuperscript{th} \\
+         \hline
+         Create and reassign reference after condition & No \\
+         \hline
+         Shallow-copy objects without last property & No \\
+         \hline
+         Convert iterable object to an array & No \\
+         \hline
+         Converting array like object to array & 1\textsuperscript{st} \\
+         \hline
+          Multiple return values in a function & No \\
+          \hline
+          Return string and variable name & No \\
+          \hline
+          Initialize object property in a function & No \\
+          \hline
+          Initialize array callback & No \\
+          \hline
+          Import module from file & 6\textsuperscript{th} \\
+          \hline
+          Exponential value of a number & No \\
+          \hline
+          Increment a number & 2\textsuperscript{nd} \\
+          \hline
+          Check boolean value & 1\textsuperscript{st} \\
+          \hline
+          Type casting constant to a string & No \\
+          \hline
+          Get and set functions in a class & No \\
+          \hline
     \end{tabular}
     \caption{List of all JavaScript Best Practices tested on Copilot.}
     \label{tab:all_bp}
