@@ -1,12 +1,11 @@
 \section{Results}
-\label{chapter:results}
+\label{results}
 
-% \section{Introduction}
-% Having identified the performance of current \cct{} like Copilot on detecting and suggesting common patterns like language idioms in chapter~\ref{chapter:idioms}, in this chapter we test if Copilot suggests code that follows code review standards.
-% We begin by explaining our approach to \textbf{RQ-1.1} (How do \cct{} manage to write non-smelly code?). To achieve this, we conduct an exploratory study to find if \cct{} tools like Copilot suggest the best practices based on code review standards in their suggestions. 
+In section~\ref{methodology}, we discussed our sources and the sampling approach for Pythonic Idioms and JavaScript coding style guide. 
+We then discussed how the input for Copilot to trigger code suggestions is restricted to ensure Copilot is making the decision to suggest the desired way or vice versa.
+Finally, we discussed the evaluation method used to compare Copilot's code suggestions to the idiomatic approaches and the best practices listed in coding style guide~(section~\ref{evaluation}).
 
-In section~\ref{smells:methodology}, we describe our sampling approach to collecting best practices in javascript and the evaluation method used to compare Copilot suggestions to the best practices listed in coding style and code review standards. 
-In section~\ref{bp}, we show the results of the study comparing Copilot suggestions and code review standards in javascript.
+In this section, we show the results of the study comparing Copilot suggestions against Pythonic idioms~(section~\ref{idioms}) addressing \textbf{RQ-1.1} (How do \cct{} manage programming idioms?) and JavaScript coding style guide~(section~\ref{smells}) addressing \textbf{RQ-1.2} (How do \cct{} manage manage to suggest non-smelly code?).
 
 \input{chapters/3/idioms}
 \input{chapters/3/smells}

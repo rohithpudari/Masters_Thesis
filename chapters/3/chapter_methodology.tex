@@ -2,11 +2,23 @@
 \label{chapter:methodology}
 
 \section{Introduction}
-Useful \cct{} tools should always suggest the optimal way as its first suggestion. In this chapter, we test if Copilot suggests the optimal way. 
-We begin by explaining the current challenges with \cct{} like Copilot and 
-We begin by explaining our approach to \textbf{RQ-1.1} (How do \cct{} manage programming idioms?). To achieve this, we conduct an exploratory study to find if \cct{} tools like Copilot suggest the optimal way in their suggestions. It is shown that Copilot's base model Codex performs best in python programming language~\cite{copilot}. So, we chose to test Copilot on python programming language idioms.
+Useful \cct{} should always suggest the optimal way as its first suggestion. In this chapter, we test if Copilot suggests the optimal way. 
+We begin by explaining the current challenges with \cct{} like Copilot, showing recent research works on common problems faced with using Copilot and the motivation to finding the limitations of current \cct{} like Copilot~(section~\ref{challenges}).
 
-In section~\ref{methodology}, we describe our sampling approach to collecting python idioms and the evaluation method used to compare Copilot suggestions to the optimal way listed in python idioms. In section~\ref{secidioms}, we show the results of the study comparing Copilot suggestions and idioms in python programming language. We observe that Copilot performs poorly in suggesting the optimal way in its suggestions. 
+In section~\ref{methodology}, We explain our approach to \textbf{RQ-1} (What are the current boundaries of \cct{}?). 
+We describe our sampling approach to collecting Pythonic idioms~(section~\ref{sampling}) and best practices in JavaScript~(section~\ref{smells:sampling}). We then describe the input given to Copilot for triggering the generation of code suggestions~(section~\ref{input}).
+Finally, we explain our evaluation method used to compare Copilot suggestions to the recommended practices~(section~\ref{evaluation}).
+
+In section~\ref{results}, we present our results on performance of Copilot in suggesting recommended practices for 50 different coding scenarios~(25 pythonic idioms + 25 code smells), which answers \textbf{RQ-1.1} (How do \cct{} manage programming idioms?), and \textbf{RQ-1.2} (How do \cct{} manage to write non-smelly code?).
+We observe that Copilot had the recommended practices in its top 10 suggestions for 18 out of 50 coding scenarios~(36\% of all tests performed).
+
+% In section~\ref{methodology}, we describe our sampling approach to collecting python idioms and the evaluation method used to compare Copilot suggestions to the optimal way listed in python idioms. In section~\ref{secidioms}, we show the results of the study comparing Copilot suggestions and idioms in python programming language. We observe that Copilot performs poorly in suggesting the optimal way in its suggestions. 
+
+% Having identified the performance of current \cct{} like Copilot on detecting and suggesting common patterns like language idioms in chapter~\ref{chapter:idioms}, in this chapter we test if Copilot suggests code that follows code review standards.
+% We begin by explaining our approach to \textbf{RQ-1.1} (How do \cct{} manage to write non-smelly code?). To achieve this, we conduct an exploratory study to find if \cct{} tools like Copilot suggest the best practices based on code review standards in their suggestions. 
+
+% In section~\ref{smells:methodology}, we describe our sampling approach to collecting best practices in javascript and the evaluation method used to compare Copilot suggestions to the best practices listed in coding style and code review standards. 
+% In section~\ref{bp}, we show the results of the study comparing Copilot suggestions and code review standards in javascript.
 
 \input{chapters/3/challenges}
 \input{chapters/3/input_idioms}
