@@ -1,21 +1,25 @@
 \subsection{Paradigms and Idioms}
-The paradigms and idioms is the mid level of software abstraction in our taxonomy. This level requires the suggested code satisfy all the previous levels of abstractions and use common paradigms and language idioms in its suggestions, these include common practices of performing a task in a programming language. 
-For example, considering the task of sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using idioms like best way to swap items in a list~(line 8 in fig~\ref{fig:idioms}) instead of using another temp variable~(shown in fig~\ref{fig:correctness}). 
+The paradigms and idioms is the third level of software abstraction in our taxonomy. 
+This level requires the suggested code satisfy all the previous levels of abstractions and use common paradigms and language idioms in its code suggestions, these include common practices of performing a programming task. 
 
-The main goal of this level in the taxonomy is for \cct{} to be able to detect and use the commonly used practices occur in public code in its code suggestions to a problem.
-Figure~\ref{fig:idioms} shows the example and the suggestions from \cct{} at this abstraction level.
+For example, considering the task of sorting operation on a list of numbers. 
+To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using idiomatic ways in its code suggestions, like the Pythonic way of swapping items in a list~(line 5 in figure~\ref{fig:idioms}), As opposed to suggesting non-idiomatic approaches like creating another temporary variable to swap items in a list shown in correctness level~(figure~\ref{fig:correctness}).
+
+Figure~\ref{fig:idioms} shows the sorting example and the Python code suggestions from \cct{} at this abstraction level.
 
 \begin{figure}[hbt!]
     \centering
     \includegraphics[width=\linewidth]{Figures/idioms.png}
-    \caption{\cct{} paradigms and idioms level suggestions}
+    \caption{Code suggestion of \cct{} at paradigms and idioms level}
     \label{fig:idioms}
 \end{figure}
 
-The capabilities required by \cct{} to satisfy this level of abstraction are as follows:
+The goal of this software abstraction level in the taxonomy is for \cct{} to be able to detect and use commonly known idiomatic approaches and paradigms that occur in public code in its code suggestions for suggesting code to solve a programming task.
+
+The capabilities required by \cct{} to satisfy paradigms and idioms level of software abstraction are as follows:
 \begin{enumerate}
-    \item Identify common patterns like paradigms and language idioms in public code~(training data).
-    \item Use paradigms and language idioms in suggesting solutions for a problem.
+    \item Identify common patterns like paradigms and language idioms in public code repositories~(training data).
+    \item Use paradigms and language idioms in suggesting solutions for a programming task.
     \item Satisfy requirements of all the levels below paradigms and idioms in our taxonomy.
 \end{enumerate}
 

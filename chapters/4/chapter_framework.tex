@@ -2,31 +2,37 @@
 \label{chapter:framework}
 
 \section{Introduction}
-In Chapters~\ref{chapter:idioms} and \ref{chapter:smells}, we identified that Copilot does not perform well in detecting and suggesting language idioms and best practices, 
-the scope of capability for \cct{} like Copilot is uncertain. In this chapter, we try to address \textbf{RQ-1} (What are the current boundaries of code completion tools) with a taxonomy of 5 software abstraction levels to help access the current capabilities of Copilot. 
+In Chapter~\ref{chapter:methodology}, we identified that Copilot does not perform well in detecting and suggesting language idioms and best practices.
+The scope of capability for \cct{} like Copilot is uncertain. 
+In this chapter, we try to create a metric for answering \textbf{RQ-1} (What are the current boundaries of code completion tools) with a taxonomy of six software abstraction levels to help access the current capabilities of \cct{} such as Copilot. 
 
 We explain each software abstraction level in the taxonomy and the capabilities required by \cct{} to satisfy the software abstraction level. 
-We try to delineate where current \cct{} are currently best able to perform, and where more complex software engineering tasks overwhelm them. We use a sorting routine as an example scenario to show how a \cct{} suggestion looks like at every level of abstraction in our taxonomy.
+We try to delineate where current \cct{} such as Copilot are currently best able to perform, and where more complex software engineering tasks overwhelm them. 
+Additionally, We use a sorting routine as an example scenario to show how a \cct{} code suggestion looks like at every level of abstraction in our taxonomy.
 
 \subsection{Motivation}
-To center our analysis on creating a software abstraction hierarchy, we leverage an analogous concept in the more developed (but still nascent) field of autonomous driving. 
-Koopman has adapted the SAE Autonomous Driving safety levels~\cite{sae} to those shown in figure~\ref{fig:koopman_pyramid}. 
-The pyramid concept is derived from that of Maslow~\cite{Maslow1943}, such that addressing aspects on the top of the pyramid first require the satisfaction of aspects below. 
-For example, before being able to think about system safety (such as what to do in morally ambiguous scenarios), the vehicle must first be able to navigate its environment reliably (``Basic Driving Functionality'').
-
-We think that a similar hierarchy exists in \AISE{}. Before worrying about software architecture issues, that is, satisfying system quality attributes such as performance, \AISE{} tools need to be able to exhibit ``basic programming functionality''. This basic functionality is where most research effort is currently concentrated, such as program synthesis, \cct{}, and automated bug repair.
+To center our analysis on creating a software abstraction hierarchy to create a metric for answering \textbf{RQ-1} (What are the current boundaries of code completion tools), 
+we leverage an analogous concept in the more developed (but still nascent) field of autonomous driving. 
+Koopman has adapted the SAE Autonomous Driving safety levels~\cite{sae} to seven levels of autonomous vehicle safety hierarchy of needs shown in figure~\ref{fig:koopman_pyramid}. 
 
 \begin{figure}[hbt!]
     \centering
-    \includegraphics[width=.8\linewidth]{Figures/koopman_pyramid.png}
+    \includegraphics[width=\linewidth]{Figures/koopman_pyramid.png}
     \caption{Koopman's Autonomous Vehicle Safety Hierarchy of Needs~\cite{koopman}. SOTIF = safety of the intended function.}
     \label{fig:koopman_pyramid}
 \end{figure}
+
+The pyramid concept is derived from that of Maslow~\cite{Maslow1943}, such that addressing aspects on the top of the pyramid first require the satisfaction of aspects below. 
+For example, before being able to think about system safety (such as what to do in morally ambiguous scenarios), the vehicle must first be able to navigate its environment reliably (``Basic Driving Functionality'').
+
+We think that a similar hierarchy exists in \AISE{}. Before worrying about software architecture issues, that is, satisfying system quality attributes such as performance and following idiomatic approaches, \AISE{} tools need to be able to exhibit ``basic programming functionality''. This basic functionality is where most research effort is currently concentrated, such as program synthesis, \cct{}, and automated bug repair.
+
 
 \input{chapters/4/taxonomy}
 \input{chapters/4/syntax}
 \input{chapters/4/correctness}
 \input{chapters/4/idioms}
 \input{chapters/4/smells}
-\input{chapters/4/design}
+\input{chapters/4/low_design}
+\input{chapters/4/high_design}
 \input{chapters/4/summary}

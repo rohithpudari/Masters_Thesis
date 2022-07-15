@@ -1,14 +1,15 @@
 \subsection{Correctness}
 \label{correctness}
-In this software abstraction level in our taxonomy, the suggested code by \cct{} should not only be syntactically correct but also solves the task. 
-This level does not require \cct{} to suggest the optimal solution for the task but to be able to suggest a solution to a task.
-For example, consider a task of perform a sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, which is not required to to be the best algorithm to be the most efficient way.
-Figure~\ref{fig:correctness} shows the example and the suggestions from \cct{} at this abstraction level.
+Correctness is the second level of software abstraction in our taxonomy. In this level, the \cct{} should suggest code that is not only syntactically correct but also solves the programming task. 
+This level does not require \cct{} to suggest the optimal solution possible for the programming task but to be able to suggest a solution to the programming task.
+
+For example, consider the programming task of performing a sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, which is not required to to be the most efficient way of sorting a list.
+Figure~\ref{fig:correctness} shows the list sorting example and the Python code suggestion from \cct{} at this abstraction level, which performs the sorting operation.
 
 \begin{figure}[hbt!]
     \centering
     \includegraphics[width=.9\linewidth]{Figures/correctness.png}
-    \caption{\cct{} correctness level suggestions}
+    \caption{Code suggestion of \cct{} at correctness level}
     \label{fig:correctness}
 \end{figure}
 
@@ -16,7 +17,8 @@ The goal of this software abstraction level in our taxonomy is for a \cct{} to b
 The capabilities required by \cct{} to satisfy this level of abstraction are as follows:
 
 \begin{enumerate}
-    \item Suggest a solution for a given programming task which may not be the optimal solution for that problem.
+    \item Suggest a solution for a given programming task which may not be the optimal solution for that programming task.
+    \item The solution suggested is not required to cover all the edge cases for that programming task.
     \item Satisfy requirements of all the levels below correctness in our taxonomy.
 \end{enumerate}
 
