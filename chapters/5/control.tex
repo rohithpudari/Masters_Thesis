@@ -1,7 +1,12 @@
 \section{Control}
 \label{control}
-Being generative models, tools like Copilot are extremely sensitive to input with stability challenges and to make them autonomous raises control concerns.
-For example, if a human asks for a N\textsuperscript{2} sorting algorithm, should Copilot recommend one, or the NlogN alternative? 
+Being generative models, tools like Copilot are extremely sensitive to input with stability challenges, and to make them autonomous raises control concerns.
+For example, if a human asks for a N\textsuperscript{2} sorting algorithm, should Copilot recommend one or the NlogN alternative? 
 Ideally, tools should warn users if prompted to suggest sub-optimal code. 
 \AISE{} should learn to differentiate between optimal and sub-optimal code. 
 One direction to look at is following commit histories of files, as they are the possible places to find bug fixes and performance improvements.
+
+\section{Over-reliance}
+Over-reliance on generated outputs is one of the main hazards connected to the use of code generation models in practice.
+Codex may provide solutions that seem reasonable on the surface but do not truly accomplish what the user had in mind. Depending on the situation, this could negatively impact inexperienced programmers and have serious safety consequences. Human oversight and vigilance are always required to safely use \cct{} like Copilot.
+Empirical research is required to consistently ensure alertness in practice across various user experience levels, UI designs, and tasks.

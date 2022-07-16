@@ -1,7 +1,10 @@
 \section{Explainability}
 \label{explain}
 Copilot is closed source, and it is currently not possible to determine the source or the reason behind each suggestion, making it difficult to detect any problems (access is only via an API). 
-However, engineering software systems is laden with ethical challenges, and understanding why a suggestion was made, particularly for architectural questions such as system fairness, is essential. 
+However, engineering software systems are laden with ethical challenges, and understanding why a suggestion was made, particularly for architectural questions such as system fairness, is essential. 
 Probes, as introduced in \cite{karmakar21}, might expand technical insight into the models.
 
-Another challenge is understanding the basis for the ranking metric for different suggestions made by Copilot. This metric has not been made public. Thus, we cannot determine the reason Copilot is ranking one approach (e.g., non-idiomatic) over the idiomatic (preferred) approach. However, large language model suggestions are based on its training data~\cite{training_extraction}, so one explanation is that the non-idiomatic approach is more frequent in the training data~\cite{stochastic_parrots}. Better characterization of the rankings would allow users to better understand the motivation. 
+Another challenge is understanding the basis for the ranking metric for different suggestions made by Copilot. 
+This metric has not been made public. 
+Thus, we cannot determine why Copilot ranks one approach (e.g., non-idiomatic) over the idiomatic (preferred) approach. However, large language model suggestions are based on its training data~\cite{training_extraction}, so one explanation is that the non-idiomatic approach is more frequent in the training data~\cite{stochastic_parrots}. 
+Better characterization of the rankings would allow users to better understand the motivation. 

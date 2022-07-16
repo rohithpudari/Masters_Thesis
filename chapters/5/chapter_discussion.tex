@@ -2,19 +2,19 @@
 \label{chapter:discussion}
 
 \section{Introduction}
-We began this thesis with an analysis of Copilot code suggestions on language idioms and code smells, to understand the current capabilities of \cct{} like Copilot.
-In this chapter, we try to address \textbf{RQ-2} (Given the current boundary, how far is it from suggesting design decisions?) with a discussion on the complex nature of design decisions involving many factors, making it difficult for \cct{} like Copilot to detect the information from code files and suggest design decisions to satisfy the top abstraction level of our taxonomy.
+We began this thesis by analyzing Copilot code suggestions on Pythonic idioms, and Javascript code smells to understand the current boundaries of \cct{} like Copilot using a software abstraction taxonomy.
+In this chapter, we try to address \textbf{RQ-2} (Given the current boundary, how far is it from suggesting design decisions?) with a discussion on the complex nature of design decisions involving factors ranging from requirement analysis to maintenance, making it difficult for \cct{} like Copilot to detect the information from code files and suggest design decisions to satisfy the top software abstraction level of our taxonomy.
 
-Next, in section~\ref{cs2design} we discuss our vision for \cct{} like Copilot to satisfy design level in our taxonomy, and outline the difficulty its underlying Codex LLM approach might run into.
-Further, in section~\ref{evolution} we discuss how design choices change over time and outline the difficulties of \cct{} like Copilot to keep updating its suggestions and reflect the current design practices.
-Furthermore, having established the software abstraction hierarchy to help assess the capabilities of \cct{}, in section~\ref{limitations} we report on the threats to the validity of the research presented in this thesis and the steps we have taken to mitigate these threats.
+In section~\ref{cs2design}, we discuss our vision for \cct{} like Copilot to satisfy the design level in our taxonomy and outline the difficulty its underlying Codex LLM approach might run into.
+Further, we discuss how design choices change over time and outline the difficulties of \cct{} like Copilot to keep updating its suggestions and reflect the current design practices~(section~\ref{evolution}).
+Having established the software abstraction hierarchy to help assess the capabilities of \cct{}, in section~\ref{limitations}, we report on the threats to the validity of the research presented in this thesis and the steps we have taken to mitigate these threats.
 
-We conclude this chapter by discussing some of the ways in which this study could be extended further, some implications for researchers and practitioners, and some future works that our study enables~(section~\ref{future}).
+We conclude this chapter by discussing how this study could be extended further, some implications for researchers and practitioners, and some future works that our study enables~(section~\ref{future}).
 
 \input{chapters/5/cs2design}
+\input{chapters/5/implications}
 \input{chapters/5/limitations}
 \input{chapters/5/explaninability}
 \input{chapters/5/control}
-\input{chapters/5/implications}
 \input{chapters/5/future}
 \input{chapters/5/summary}
