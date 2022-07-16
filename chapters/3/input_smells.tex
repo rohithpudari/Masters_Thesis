@@ -1,12 +1,11 @@
 \subsection{Code Smells}
 \label{smells}
-A standard style guide is a set of guidelines that explain how code should be written, formatted, and organised. 
+A standard style guide is a set of guidelines that explain how code should be written, formatted and organized. 
 Using a style guide ensures that code can be easily shared among developers. As a result, any new developer may immediately become familiar with a specific piece of code and write code that other developers will quickly and easily comprehend.
-A good \cct{} tool should only suggest code that is consistent with coding style and passes code reviews by humans. 
+A good \cct{} tool should only suggest code consistent with coding style and pass code reviews by humans. 
 
-To answer \textbf{RQ-1.2} (How do \cct{} manage manage to suggest non-smelly code?), we chose JavaScript, to generalise our experiments with Copilot. 
-We relied on the AirBNB javascript coding style guide~\cite{airbnb_code}, a widely used coding style and code review standard introduced in 2012, which is described as ``mostly reasonable approach to JavaScript''~\cite{airbnb_code}.
-
+To answer \textbf{RQ-1.2} (How do \cct{} manage to suggest non-smelly code?), we chose JavaScript to generalize our experiments with Copilot. 
+We relied on the AirBNB javascript coding style guide~\cite{airbnb_code}, a widely used coding style and code review standard introduced in 2012, described as a ``primarily reasonable approach to JavaScript''~\cite{airbnb_code}.
 
 % \section{Methodology}
 % \label{smells:methodology}
@@ -14,11 +13,11 @@ We relied on the AirBNB javascript coding style guide~\cite{airbnb_code}, a wide
 
 \subsubsection{Sampling Approach}
 \label{smells:sampling}
-The AirBNB JavaScript coding style guide~\cite{airbnb_code} contains a comprehensive list of best practices covering nearly every aspect of javascript coding like objects, arrays, modules, and iterators. However, it also includes project specific styling guidelines like naming conventions, commas, comments.
-Since, we are testing Copilot for widely accepted best practices and not project specific styling in JavaScript. 
+The AirBNB JavaScript coding style guide~\cite{airbnb_code} contains a comprehensive list of best practices covering nearly every aspect of javascript coding like objects, arrays, modules, and iterators. However, it also includes project-specific styling guidelines like naming conventions, commas, and comments.
+Since we are testing Copilot for widely accepted best practices and not project-specific styling in JavaScript. 
 We sampled 25 best practices from the AirBNB JavaScript coding style guide~\cite{airbnb_code}, 
-which were closer to design level rather than code level. For example, selecting logging practices as a sample coding standard rather than trailing comma use in javascript as a coding standard. 
-This sampling approach is done to ensure Copilot is not tested against personalised styling guidelines of one specific project or a company. In contrast, our goal for Copilot here is to be tested against practices that actually bring performance or efficiency to the code base.
+which were closer to the design level rather than the code level. For example, selecting logging practices as a sample coding standard rather than trailing comma use in javascript as a coding standard. 
+This sampling approach ensures Copilot is not tested against personalized styling guidelines of one specific project or a company. In contrast, our goal for Copilot here is to be tested against practices that bring performance or efficiency to the code base.
 
 % \subsection{Study Setup}
 

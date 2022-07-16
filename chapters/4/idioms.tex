@@ -1,8 +1,8 @@
 \subsection{Paradigms and Idioms}
-The paradigms and idioms is the third level of software abstraction in our taxonomy. 
-This level requires the suggested code satisfy all the previous levels of abstractions and use common paradigms and language idioms in its code suggestions, these include common practices of performing a programming task. 
+The paradigms and idioms are our taxonomy's third level of software abstraction. 
+This level requires the suggested code to satisfy all the previous levels of abstractions and use common paradigms and language idioms in its code suggestions. These include common practices of performing a programming task. 
 
-For example, considering the task of sorting operation on a list of numbers. 
+For example, consider the task of sorting operation on a list of numbers. 
 To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using idiomatic ways in its code suggestions, like the Pythonic way of swapping items in a list~(line 5 in figure~\ref{fig:idioms}), As opposed to suggesting non-idiomatic approaches like creating another temporary variable to swap items in a list shown in correctness level~(figure~\ref{fig:correctness}).
 
 Figure~\ref{fig:idioms} shows the sorting example and the Python code suggestions from \cct{} at this abstraction level.
@@ -14,7 +14,7 @@ Figure~\ref{fig:idioms} shows the sorting example and the Python code suggestion
     \label{fig:idioms}
 \end{figure}
 
-The goal of this software abstraction level in the taxonomy is for \cct{} to be able to detect and use commonly known idiomatic approaches and paradigms that occur in public code in its code suggestions for suggesting code to solve a programming task.
+The goal of this software abstraction level in the taxonomy is for \cct{} to detect and use commonly known idiomatic approaches and paradigms that occur in public code in its suggestions for suggesting code to solve a programming task.
 
 The capabilities required by \cct{} to satisfy paradigms and idioms level of software abstraction are as follows:
 \begin{enumerate}

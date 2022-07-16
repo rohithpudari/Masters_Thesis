@@ -3,7 +3,7 @@
 Correctness is the second level of software abstraction in our taxonomy. In this level, the \cct{} should suggest code that is not only syntactically correct but also solves the programming task. 
 This level does not require \cct{} to suggest the optimal solution possible for the programming task but to be able to suggest a solution to the programming task.
 
-For example, consider the programming task of performing a sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, which is not required to to be the most efficient way of sorting a list.
+For example, consider the programming task of performing a sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, which is not required to be the most efficient way of sorting a list.
 Figure~\ref{fig:correctness} shows the list sorting example and the Python code suggestion from \cct{} at this abstraction level, which performs the sorting operation.
 
 \begin{figure}[hbt!]
@@ -13,11 +13,11 @@ Figure~\ref{fig:correctness} shows the list sorting example and the Python code 
     \label{fig:correctness}
 \end{figure}
 
-The goal of this software abstraction level in our taxonomy is for a \cct{} to be able to suggest a solution rather suggesting the best solution.
+The goal of this software abstraction level in our taxonomy is for a \cct{} to be able to suggest a solution instead of the best one.
 The capabilities required by \cct{} to satisfy this level of abstraction are as follows:
 
 \begin{enumerate}
-    \item Suggest a solution for a given programming task which may not be the optimal solution for that programming task.
+    \item Suggest a solution for a given programming task that may not be the optimal solution for that programming task.
     \item The solution suggested is not required to cover all the edge cases for that programming task.
     \item Satisfy requirements of all the levels below correctness in our taxonomy.
 \end{enumerate}

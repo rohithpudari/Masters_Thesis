@@ -9,11 +9,13 @@
 \textbf{ABSTRACT}
 \end{center}
 
-AI-supported programming has arrived, as shown by the introduction and successes of large language models for code, such as Copilot/Codex (Github/OpenAI) and AlphaCode (DeepMind). Above human average performance on programming challenges is now possible. However, software engineering is much more than solving programming contests. Moving beyond code completion to AI-supported software engineering will require an AI system that can, among other things, understand how to avoid code smells, to follow language idioms, and eventually (maybe!) propose rational software designs. 
+AI-supported programming has arrived, as shown by the introduction and successes of large language models for code, such as Copilot/Codex (Github/OpenAI) and AlphaCode (DeepMind). Above-average human performance on programming challenges is now possible. 
+However, software development is much more than solving programming contests. 
+Moving beyond code completion to \AISE{} will require an AI system that can, among other things, understand how to avoid code smells, follow language idioms, and eventually (maybe!) propose rational software designs.
 
-In this study, we explore the current limitations these language model based tools exhibit, and offer a simple taxonomy for understanding how tools in this space can be classified.
-We first perform a exploratory study on Copilot's code suggestions for language idioms and code smells. We find that Copilot does not follow language idioms and avoid code smells in most of our test scenarios. We then conduct additional investigation to determine the current boundaries of \cct{} like Copilot by introducing a taxonomy of software abstraction hierarchies where ‘basic programming functionality’ such as code compilation and syntax checking is at the least abstract level, software architecture analysis and design is at the most abstract level.
-We conclude by providing a discussion on challenges for future development of \cct{} to reach design level of abstraction in our taxonomy.
+In this study, we explore the current limitations of \cct{} like Copilot and offer a simple taxonomy for understanding the classification of \cct{} in this space.
+We first perform an exploratory study on Copilot’s code suggestions for language idioms and code smells. Copilot does not follow language idioms and avoids code smells in most of our test scenarios. We then conduct additional investigation to determine the current boundaries of \cct{} like Copilot by introducing a taxonomy of software abstraction hierarchies where ‘basic programming functionality’ such as code compilation and syntax checking is at the least abstract level, software architecture analysis and design are at the most abstract level.
+We conclude by providing a discussion on challenges for future development of \cct{} to reach the design level of abstraction in our taxonomy.
 
 
 % All modern IDEs feature intelligent code completion and it is used by both new and experienced software developers alike. However, there is still room for improvement in these code completion engines in terms of sorting the given completions according to the context of previously written code.

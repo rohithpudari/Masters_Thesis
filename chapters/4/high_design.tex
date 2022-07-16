@@ -1,23 +1,23 @@
 \subsubsection{System level design}
 \label{high_design}
-System level design is the second half of the design level in our taxonomy. This level is the highest abstraction level with highest human oversight and hardest to define rules.
-\cct{} at this level are capable of suggesting design decisions in project level like suggesting design patterns and architectural tactics with minimal input from the user.
+System level design is the second half of the design level in our taxonomy. This level is the highest abstraction level with the highest human oversight and the most complex to define rules.
+\cct{} at this level can suggest design decisions at the project level, like suggesting design patterns and architectural tactics with minimal input from the user.
 
-This level requires the suggested code suggest rational design practices in its code suggestions for a problem and satisfy all the previous levels of abstractions. Design practices are dependent on many factors like requirements and technical debt, \cct{} should be capable of considering all the relevant factors before suggesting a design practice and provide the reasoning for each choice to the user.
+This level requires the suggested code to suggest rational design practices in its code suggestions for a problem and satisfy all the previous levels of abstractions. Design practices depend on many factors like requirements and technical debt, \cct{} should be capable of considering all the relevant factors before suggesting a design practice and providing the reasoning for each choice to the user.
 
-The main goal of this level in the taxonomy is for a \cct{} to help the user in every part of software development process with minimal input from the user.
+The main goal of this level in the taxonomy is for a \cct{} to help the user in every part of the software development process with minimal input from the user.
 
 The capabilities required by a \cct{} to satisfy this level of abstraction are as follows
 \begin{enumerate}
     \item Identify system level concerns in code files.
     \item Suggest design patterns and architectural tactics when prompted.
-    \item Code suggestions should cover all the non-functional requirements of the given project.
-    \item \cct{} should be able to identify coding style followed and adapt its code suggestions.
-    \item \cct{} should be able to make design decisions based on requirements and inform user about those decisions.
+    \item Code suggestions should cover all the project's non-functional requirements.
+    \item \cct{} should be able to identify the coding style followed and adapt its code suggestions.
+    \item \cct{} should be able to make design decisions based on requirements and inform the user about those decisions.
     \item Satisfy requirements of all previous levels of abstractions.
 \end{enumerate}
 
 To make a \cct{} suggest design decisions is a very challenging task. 
-As software design is very subjective and Software design concerns are still challenging to comprehend. 
-This is because software design is one of the least concrete parts in the software development lifecycle, especially when compared to testing, implementation, and deployment~\cite{sedesign}. 
-Software design is typically carried out heuristically by drawing on the knowledge of the design team, the project context (such as architecturally significant needs), and a constantly evolving set of patterns and styles from the literature. We discuss more on this challenges in Chapter~\ref{chapter:discussion}.
+Software design is very subjective, and software design concerns are still challenging to comprehend. 
+This is because software design is one of the least concrete parts of the software development lifecycle, especially compared to testing, implementation, and deployment~\cite{sedesign}. 
+Software design is typically carried out heuristically by drawing on the design team's knowledge, the project context (such as architecturally significant needs), and a constantly evolving set of patterns and styles from the literature. We discuss more on these challenges in Chapter~\ref{chapter:discussion}.

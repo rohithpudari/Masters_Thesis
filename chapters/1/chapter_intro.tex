@@ -2,26 +2,26 @@
 \label{chapter:introduction}
 Programming is a powerful and ubiquitous problem-solving tool. Developing systems that can assist software developers or even generate programs independently could make programming more productive and accessible~\cite{peggyprod}.
 With increasing pressure on software developers to produce code quickly, there is considerable interest in tools and techniques for improving productivity~\cite{productivity}.
-Code completion is one such feature that predicts what a software developer is trying to code and offers predictions as suggestions to the user~\cite{cct}. All modern IDEs feature intelligent code completion tools in different forms and it is used by both new and experienced software developers~\cite{cct_usage}. Developing AI systems that can effectively model and understand code can transform these code completion tools and the way we interact with them~\cite{cct_usage}.
+Code completion is one such feature that predicts what a software developer tries to code and offers predictions as suggestions to the user~\cite{cct}. All modern IDEs feature intelligent code completion tools in different forms that are used by both new and experienced software developers~\cite{cct_usage}. Developing AI systems that can effectively model and understand code can transform these code completion tools and how we interact with them~\cite{cct_usage}.
 
-Recent large-scale pre-trained language models such as Codex~\cite{copilot} have demonstrated an impressive ability to generate code and are now able to solve programming contest style problems~\cite{empirical_eval}. 
-However, software engineering is much more than writing code. It involves complex challenges like following the best practices, avoiding code smells, using design patterns and many more decisions before writing code. 
+Recent large-scale pre-trained language models such as Codex~\cite{copilot} have demonstrated an impressive ability to generate code and can now solve programming contest-style problems~\cite{empirical_eval}. 
+However, software engineering is much more than writing code. It involves complex challenges like following the best practices, avoiding code smells, using design patterns, and many more decisions before writing code.
 
-The scope of capabilities for \cct{} is uncertain. Identifying the nature of Copilot capabilities when it comes to more complex challenges, i.e., \AISE{} (as opposed to development tasks, such as coding or programming problems). Delineating where \cct{} are currently best able to perform, and where more complex software engineering tasks overwhelm them is helpful in answering questions like 
-exactly which software problems can current \cct{} solve? 
-If \cct{} make a suggestion, is that suggestion accurate and optimal? Should a user intervene to correct it? However, identifying these boundaries is a challenging task. In the next section, we discuss this challenge and the research opportunity that it creates as the motivation for this study.
+The scope of capabilities for \cct{} is uncertain. Identifying the nature of Copilot capabilities when it comes to more complex challenges, i.e., \AISE{} (as opposed to programming tasks, such as coding or solving competitive programming problems). Delineating where \cct{} are currently best able to perform, and where more complex software engineering tasks overwhelm them helps answer questions like exactly which software problems can current \cct{} solve? 
+If \cct{} make a suggestion, is that suggestion accurate and optimal? Should a user intervene to correct it? However, identifying these boundaries is a challenging task. In the next section, we discuss this challenge and the research opportunity it creates as this study's motivation.
 
 \section{Motivation}
-There have been huge improvements in the field of \cct{} in recent years. Copilot has been at the forefront and is particularly impressive in understanding the context and semantics of code with just a few lines of comments or code as input and can suggest the next few lines or even entire functions in some cases~\cite{copilot}.
+In recent years, there have been considerable improvements in the field of \cct{}. 
+Copilot has been at the forefront and is particularly impressive in understanding the context and semantics of code with just a few lines of comments or code as input and can suggest the next few lines or even entire functions in some cases~\cite{copilot}.
 
 The biggest challenge with using tools like Copilot is their training data, These tools are trained on existing software source code, and training costs are expensive.
-Several classes of errors have been discovered (shown in section~\ref{challenges}), which follow from the presence of these same errors in public (training) data. There is a need to stay cautious about common bugs that people make creeping into Copilot suggestions and to keep Copilot updated to the ever-changing best practices or new bug fixes in public repositories.
+Several classes of errors have been discovered (shown in section~\ref{challenges}), which follow from the presence of these same errors in public (training) data. There is a need to stay cautious about common bugs people make, creeping into Copilot suggestions and keeping Copilot updated to the ever-changing best practices or new bug fixes in public repositories.
 
 Understanding the current limitations of Copilot will help developers use \cct{} effectively. The advantage of knowing where Copilot is good/bad lets users use these tools more efficiently by letting \cct{} take over where they excel and focus more on tasks where \cct{} are shown to have struggled with the quality of code suggestions.
 
-Another advantage of a taxonomy of software abstractions make code suggestions better in complex situations, shifting research focus to make \cct{} better at tasks shown to have struggled with the quality of code suggestions, minimizing the input required by the user to make \cct{} create meaningful, quality suggestions.
+Another advantage of a taxonomy of software abstractions makes code suggestions better in complex situations, shifting research focus to make \cct{} better at tasks shown to have struggled with the quality of code suggestions, minimizing the input required by the user to make \cct{} create meaningful, quality suggestions.
 
-In this thesis, we investigate the current limitations of Copilot with an empirical study on Copilot suggestions. Using the findings, we introduce a taxonomy of software abstraction hierarchy, modeled on the ideas in the SAE taxonomy and Koopman's extension for self-driving vehicles. The insights gained from this study can help developers understand how to best use tools like Copilot as well as provide insights to researchers trying to develop and improve the field of \cct{}.
+In this thesis, we investigate the current limitations of Copilot with an empirical study on Copilot suggestions. Using the findings, we introduce a taxonomy of software abstraction hierarchy, modeled on the ideas in the SAE taxonomy and Koopman's extension for self-driving vehicles. The insights gained from this study can help developers understand how to best use tools like Copilot and provide insights to researchers trying to develop and improve the field of \cct{}.
 
 \input{chapters/1/cct}
 \input{chapters/1/rq}

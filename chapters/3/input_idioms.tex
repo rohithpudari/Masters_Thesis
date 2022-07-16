@@ -4,7 +4,7 @@ In this section, We explain the methodology we used to address \textbf{RQ-1} (Wh
 
 Additionally, we explain how 25 coding scenarios for Pythonic idioms~(section~\ref{smells:sampling}) and code smells in JavaScript~(section~\ref{sampling}) were sampled.
 Finally, we discuss how the input is shaped to trigger Copilot to generate code suggestions~(section~\ref{input}) and how Copilot suggestions are evaluated (section~\ref{evaluation}).
-All of the following analysis was carried out using Copilot extension in Visual Studio Code. We use the most recent stable release of Copilot extension available at the time of writing~(version number 1.31.6194) in Visual Studio Code.
+The following analysis was carried out using the Copilot extension in Visual Studio Code. We use the most recent stable release of the Copilot extension available at the time of writing~(version number 1.31.6194) in Visual Studio Code.
 
 \subsection{Pythonic Idioms}
 \label{python}
@@ -15,20 +15,20 @@ we chose Python, one of the most popular programming languages, because Copilot'
 The definition for the term \emph{Pythonic} in Python found in official Python glossary\footnote{\url{https://docs.python.org/3/glossary.html\#term-pythonic}} as follows:
 
 \begin{quote}
-    An idea or piece of code which closely follows the most common idioms of the Python language, rather than implementing code using concepts common to other languages. For example, a common idiom in Python is to loop over all elements of an iterable using a for statement. Many other languages do not have this type of construct, so people unfamiliar with Python sometimes use a numerical counter instead, as opposed to the cleaner, pythonic method.
+    An idea or piece of code follows the most common idioms of the Python language rather than implementing code using concepts common to other languages. For example, a common idiom in Python is to loop over all elements of an iterable using a for statement. Many other languages do not have this construct, so people unfamiliar with Python sometimes use a numerical counter instead, instead of the cleaner, pythonic method.
 \end{quote}
 
-This definition indicates a broad meaning, referring to both concrete code, but also \emph{Ideas} in general sense. Many Python developers argue that coding the \emph{pythonic way} is the most accepted way to code by the Python community~\cite{Alexandru2018}. 
-We consider an \emph{idiom} to be any reusable abstraction that makes Python code more readable by shortening or added syntactic sugar. Idioms can also be more efficient than a basic solution and some idioms are both more readable and more efficient.
-The pythonicity of a piece of code stipulates how concise, easily readable, and in general terms, good the code is. This concept of pythonicity, as well as the concern about whether code is pythonic or not, is notably prevalent in the Python community.
+This definition indicates a broad meaning, referring to both concrete code and also \emph{Ideas} in a general sense. Many Python developers argue that coding the \emph{pythonic way} is the most accepted way to code by the Python community~\cite{Alexandru2018}. 
+We consider an \emph{idiom} to be any reusable abstraction that makes Python code more readable by shortening or adding syntactic sugar. Idioms can also be more efficient than a basic solution, and some idioms are more readable and efficient.
+The pythonicity of a piece of code stipulates how concise, easily readable, and generally good the code is. This concept of pythonicity, as well as the concern about whether code is pythonic or not, is notably prevalent in the Python community.
 
-We sampled idioms from the work of Alexandru et al.~\cite{Alexandru2018} and Farook et al.~\cite{idioms}, which identified idioms from presentations given by renowned Python developers that frequently mention idioms, e.g., Hettinger~\cite{hettinger} and Jeff Knupp~\cite{knupp} and 
+We sampled idioms from the work of Alexandru et al.~\cite{Alexandru2018}, and Farook et al.~\cite{idioms}, which identified idioms from presentations given by renowned Python developers that frequently mention idioms, e.g., Hettinger~\cite{hettinger} and Jeff Knupp~\cite{knupp} and 
 popular Python books, such as ``Pro Python''~\cite{Alchin2010}, ``Fluent Python''~\cite{fluent}, ``Expert Python Programming''~\cite{expert}.
 
 
 \subsubsection{Sampling Approach}
 \label{sampling}
-We sampled the top 25 most popular pythonic idioms found in open source projects based the work of Alexandru et al.~\cite{Alexandru2018} and Farook et al.~\cite{idioms}.
-The decision to sample \emph{most popular} pythonic idioms is taken in order to give the best chance for Copilot to suggest the pythonic way as its top suggestion. As a result, Copilot will have the pythonic way more frequently in its training data and more likely to suggest the pythonic way in its suggestions.
-However, Copilot is closed source and we cannot determine if the frequency of code snippet in training data affects Copilot suggestions in any way. Research by GitHub shows that Copilot can sometimes recite from its training data in ``generic contexts"\footnote{\url{https://github.blog/2021-06-30-github-copilot-research-recitation/}}, which may lead to potential challenges like licence infringements~(shown in section~\ref{challenges}). 
+We sampled the top 25 popular pythonic idioms found in open source projects based on the work of Alexandru et al.~\cite{Alexandru2018}, and Farook et al.~\cite{idioms}.
+The decision to sample \emph{most popular} pythonic idioms is taken to give the best chance for Copilot to suggest the pythonic way as its top suggestion. As a result, Copilot will have the pythonic way more frequently in its training data and more likely to suggest the pythonic way in its suggestions.
+However, Copilot is closed source, and we cannot determine if the frequency of code snippets in training data affects Copilot's suggestions. Research by GitHub shows that Copilot can sometimes recite from its training data in ``generic contexts"\footnote{\url{https://github.blog/2021-06-30-github-copilot-research-recitation/}}, which may lead to potential challenges like license infringements~(shown in section~\ref{challenges}). 
 Sampling the most frequently used idioms will also help understand if Copilot can recite idioms present in its training data~(GitHub public repositories), which is a desirable feature for \cct{}.

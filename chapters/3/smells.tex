@@ -1,26 +1,26 @@
 \subsection{Code Smells}
 \label{smells:results}
-Using the sampling approach described in section~\ref{sampling}, we sampled 25 best practices in javascript from AirBNB javascript coding style guide~\cite{airbnb_code}. 
-We then compared Copilot suggestions when prompted with an input(shown in section~\ref{input}) to trigger a code suggestion from Copilot and present our results using evaluation approach~(shown in section~\ref{evaluation}).
+Using the sampling approach described in section~\ref{sampling}, we sampled 25 best practices in javascript from the AirBNB javascript coding style guide~\cite{airbnb_code}. 
+We then compared Copilot suggestions when prompted with an input(shown in section~\ref{input}) to trigger a code suggestion from Copilot and present our results using the evaluation approach~(shown in section~\ref{evaluation}).
 
-Copilot suggested the best practice from the AirBNB javascript coding style guide~\cite{airbnb_code} for 3 out of the 25 coding standards we tested, i.e, 3 out of 25 instances Copilot had the recommended best practice as its top suggestion.
-Moreover, only 5 out of remaining 22 coding scenarios had the best practice in Copilot top 10 suggestions currently viewable. 
-Copilot did not have the best practice in any of its top 10 suggestions for 17 scenarios out of 25 coding scenarios we tested.
+Copilot suggested the best practice from the AirBNB javascript coding style guide~\cite{airbnb_code} for 3 out of the 25 coding standards we tested, i.e., 3 out of 25 instances Copilot had the recommended best practice as its top suggestion.
+Moreover, only 5 of the remaining 22 coding scenarios had the best practice in Copilot's top 10 suggestions currently viewable. 
+Copilot did not have the best practice in its top 10 suggestions for 17 scenarios out of 25 coding scenarios we tested.
 
 The results show that Copilot did not suggest the recommended best practice as its first suggestion in the majority (88\%) of the best practices we tested.
-As Copilot is closed source, we cannot find the reason behind this but one could argue that lack of data for JavaScript compared to python could be a reason for this behaviour. 
+As Copilot is closed source, we cannot find the reason behind this, but one could argue that lack of data for JavaScript compared to python could be a reason for this behavior. 
 
-The results show that Copilot performed worse than the language idioms~(shown in chapter~\ref{idioms}).  This shows that current AI-supported
-code completion tools like Copilot is not yet capable of suggesting the best practices in its suggestions even though the best practices are the sampled from widely accepted coding style guide.
+The results show that Copilot performed worse than the language idioms~(shown in chapter~\ref{idioms}). This indicates that current AI-supported
+code completion tools like Copilot are not yet capable of suggesting the best practices in their suggestions, even though the best practices are sampled from a widely accepted coding style guide.
 
-There could be many reasons for this performance like the public repositories do not always follow coding standards, Copilot cannot detect coding style from repositories that have contribution guides including the coding standards followed in the project. 
-Copilot being closed source we cannot investigate the potential reasons behind this behavior and recommend ways to fix this issue improving the performance of Copilot.
+There could be many reasons for this performance, like the public repositories do not always follow coding standards, and Copilot cannot detect coding styles from repositories with contribution guides, including the coding standards followed in the project. 
+Copilot being closed source, we cannot investigate the potential reasons behind this behavior and recommend ways to fix this issue, improving the performance of Copilot.
 
-We did not test Copilot for suggesting project specific coding styles because Copilot does not have the feature to customise its suggestions based on preferences~\cite{Copilot-web}.
+We did not test Copilot for suggesting project-specific coding styles because Copilot does not have the feature to customize its suggestions based on preferences~\cite{Copilot-web}.
 However, \cct{} like Copilot should follow coding style guides and adapt their code suggestions to match the coding style used in the project. 
-For example, if a user is working on a project where one of the coding style guideline says to leave a blank line after blocks and before the next statement~\cite{airbnb_code}. As a productivity tool, the ideal behaviour for \cct{} like Copilot is to detect the coding style guideline from existing code or a coding style document in the project and always suggest code that follows the guidelines.
+For example, if a user is working on a project where one of the coding style guidelines says to leave a blank line after blocks and before the next statement~\cite{airbnb_code}. As a productivity tool, the ideal behavior for \cct{} like Copilot is to detect the coding style guideline from existing code or a coding style document in the project and always suggest code that follows the guidelines.
 
-Figure~\ref{fig:bp_1} shows the Best Practice for Copying Array Contents, showing user input (i.e., Human Input), the top suggestion by Copilot and the recommended way suggested by AirBNB JavaScript coding style guide~\cite{airbnb_code}.
+Figure~\ref{fig:bp_1} shows the Best Practice for Copying Array Contents, showing user input (i.e., Human Input), the top suggestion by Copilot, and the recommended way suggested by AirBNB JavaScript coding style guide~\cite{airbnb_code}.
 
 \begin{figure}[hbt!]
     \centering
@@ -29,7 +29,7 @@ Figure~\ref{fig:bp_1} shows the Best Practice for Copying Array Contents, showin
     \label{fig:bp_1}
 \end{figure}
 
-\cct{} like Copilot should learn to suggest best practices to avoid code smells, detect coding style of the project and adapt its coding suggestions in order to be helpful for a user as a productivity tool. 
+\cct{} like Copilot should learn to suggest best practices to avoid code smells, detect the project's coding style and adapt its coding suggestions to be helpful for a user as a productivity tool. 
 
 % \begin{tcolorbox}[title=Copying Array Contents,boxsep=.15mm]
 %     %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
@@ -56,7 +56,7 @@ Figure~\ref{fig:bp_1} shows the Best Practice for Copying Array Contents, showin
 %%%%%% TODO: remember to update the screenshot if the source citation is different from the citation in the text %%%%%%
 
 Table~\ref{tab:all_bp} shows the complete list of all the best practices we tested on Copilot sampled from the AirBNB Coding Style guide~\cite{airbnb_code} and the ranking of the best practice in Copilot suggestions (if it exists).
-All the best practices shown in Table~\ref{tab:all_bp} can be found in the \repl{} including the code used as input (i.e., human input), the top suggestion by Copilot and the best practice from AirBNB JavaScript coding style guide~\cite{airbnb_code}.
+All the best practices shown in Table~\ref{tab:all_bp} can be found in the \repl{} including the code used as input (i.e., human input), the top suggestion by Copilot, and the best practice from AirBNB JavaScript coding style guide~\cite{airbnb_code}.
 
 \begin{table}[hbt!]
         \centering

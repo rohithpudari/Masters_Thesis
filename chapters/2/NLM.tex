@@ -1,7 +1,7 @@
 \subsection{Neural Language Models (NLMs)}
-N-grams are a simple statistical LM that is simple to comprehend and compute. However, It has no way of modeling multi sentence context and it cannot generalize to unseen data. 
+N-grams are a simple statistical LM that is simple to comprehend and compute. However, It has no way of modeling multi-sentence context and cannot generalize to unseen data. 
 Neural language models are introduced to tackle the drawbacks of LMs.
-The idea underlying NLMs is to project words from a corpus onto a continuous space and then apply a probability estimator that operates on that space. Initially, feedforward architecture was utilised in neural networks for language modelling~\cite{advancesnlm}.
+The idea underlying NLMs is to project words from a corpus onto a continuous space and then apply a probability estimator that operates on that space. Initially, feedforward architecture was used in neural networks for language modelling~\cite{advancesnlm}.
 
 % Feedforward neural networks(FFNN) are used to train a statistical model of the distribution of word sequences. Feedforward NN LMs have the disadvantage of not having longer distance dependencies since they are essentially N-gram language models~\cite{advancesnlm}. However, unlike N-grams, Feedforward NN LMs do not require a lower order ((N-1)-gram) because the probabilities are interpolated for each feasible sequence of length N-1~\cite{largenlm}.
 
@@ -26,8 +26,8 @@ The idea underlying NLMs is to project words from a corpus onto a continuous spa
 
 \subsubsection{Transformer Models}
 The transformer architecture is built using stacked self-attention mechanisms~\cite{attention}. There are six levels in both the encoder and the decoder~\cite{attention}. 
-A feed forward neural network and a self-attention mechanism (looking both at previous and future tokens) are the two components found in each encoder layer. The decoder contains an additional attention mechanism that enables it to pay attention to specific encoder segments, in contrast to the encoder layer. 
-In a machine translation test, it was demonstrated that the transformer design outperformed several NLM based models~\cite{attention}. Figure~\ref{fig:transformer} shows the architecture of a transformer.
+A feed-forward neural network and a self-attention mechanism (looking both at previous and future tokens) are the two components in each encoder layer. The decoder contains an additional attention mechanism that enables it to pay attention to specific encoder segments, in contrast to the encoder layer. 
+In a machine translation test, it was demonstrated that the transformer design outperformed several NLM-based models~\cite{attention}. Figure~\ref{fig:transformer} shows the architecture of a transformer.
 
 \begin{figure}[hbt!]
     \centering
@@ -38,5 +38,5 @@ In a machine translation test, it was demonstrated that the transformer design o
 
 \subsubsection{Contextualized Word Representations}
 The encoding of words as fixed-length vectors allowed for the use of Deep Learning in NLP. The need that all word senses have the same representation presented a challenge. Context-sensitive contextualised word representations were presented by LMs such BERT~\cite{bert}, ELMo~\cite{elmo} and GPT-3~\cite{Gpt3}. 
-BERT has a variant for general-purpose representations that support downstream applications such as natural language code-search, code documentation generation called CodeBERT~\cite{codebert}. This implies that representations of the same word vary depending on the context. 
-Metrics in numerous NLP tasks have significantly improved because to these new word representations~\cite{contextual}. 
+BERT has a variant for general-purpose representations that support downstream applications such as natural language code-search and code documentation generation called CodeBERT~\cite{codebert} implying that representations of the same word vary depending on the context. 
+Metrics in numerous NLP tasks have significantly improved because of these new word representations~\cite{contextual}. 

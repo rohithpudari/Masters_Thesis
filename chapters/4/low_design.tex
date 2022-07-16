@@ -1,27 +1,27 @@
 \subsection{Design level}
 Software design is the highest level of abstraction in our taxonomy. The goal of this level is to make \cct{} support the user in every software development process and suggest improvements.
-In order to simplify the taxonomy of overall design processes in software development, we divided it into two sub categories: Application level design and System level design. 
-\cct{} at Application level design requires more user involvement in making design choices at the file level. Whereas, in system level design, \cct{} are more autonomous and require minimal input from the user in making design choices.
+To simplify the taxonomy of overall design processes in software development, we divided it into two subcategories: Application level design and System level design. 
+\cct{} at the Application level design requires more user involvement in making design choices at the file level. Whereas, in system level design, \cct{} are more autonomous and require minimal input from the user in making design choices.
 
 \subsubsection{Application level design}
 \label{low_design}
-Application level design is the first half of design level of software abstraction in our taxonomy.
+Application level design is the first half of our taxonomy's design level of software abstraction.
 This level requires the suggested code to be free of all known vulnerabilities and include test cases and continuous integration methods when applicable.
 Code suggestions should also cover all the functional requirements of a given programming task.
 
-\cct{} at this level should be able to pick and suggest best applicable algorithm for a given coding scenario and be capable of following user specified coding style guidelines.
-For example, considering the task of sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using an algorithm which gives the best performance for that particular input scenario like suggesting quick sort algorithm~(avg time complexity = nlogn) instead of bubble sort algorithm~(avg time complexity = n\textsuperscript{2}).
+\cct{} at this level should be able to pick and suggest the best applicable algorithm for a given coding scenario and be capable of following user-specified coding style guidelines.
+For example, consider the task of sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using an algorithm that gives the best performance for that particular input scenario, like suggesting a quick sort algorithm~(avg time complexity = nlogn) instead of bubble sort algorithm~(avg time complexity = n\textsuperscript{2}).
 
-The goal of this level in the taxonomy is for a \cct{} to be able to suggest appropriate design choices at file level, considering the input from the user like coding style guidelines and help the user make design choices which satisfy all the functional requirements of the given programming task.
+The goal of this level in the taxonomy is for a \cct{} to be able to suggest appropriate design choices at the file level, considering the input from the user, like coding style guidelines, and help the user make design choices that satisfy all the functional requirements of the given programming task.
 
 The capabilities required by a \cct{} to satisfy this level of abstraction are as follows
 \begin{enumerate}
     \item Picking and suggesting the best applicable algorithm for a given scenario.
     \item Identify file level concerns in code files.
-    \item Code suggestions should be free from all recognised vulnerabilities and warn user if a vulnerability is found.
+    \item Code suggestions should be free from all recognized vulnerabilities and warn the user if a vulnerability is found.
     \item Code suggestions should cover all the functional requirements of the given programming task.
     \item \cct{} should be able to suggest code with appropriate tests and Continuous Integration~(CI) when applicable.
-    \item Code suggestions should follow user specified coding style guidelines.
+    \item Code suggestions should follow user-specified coding style guidelines.
     \item Satisfy requirements of all previous levels of abstractions.
 \end{enumerate}
 

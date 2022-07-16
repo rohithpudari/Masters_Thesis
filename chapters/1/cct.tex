@@ -1,12 +1,11 @@
 \section{\cct{}}
-The purpose of code completion as an IDE feature is to save the user's time and effort by suggesting code before they manually input it. Code completion can also aid in project exploration by giving new users a chance to view entities from various areas of the code base. The IDE typically offers a ranked list of potential completions for the user to choose from because the process of developing code can vary greatly.
+The purpose of code completion as an IDE feature is to save the user's time and effort by suggesting code before manually inputting it. Code completion can also aid in project exploration by giving new users a chance to view entities from various areas of the code base. The IDE typically offers a list of potential completions for the user because the process of developing code can vary greatly.
 
-In-IDE code completion tools have improved a lot in recent years. Early code completion techniques include suggesting variables or method calls from user code bases~\cite{mandelin2005}, which was based on lists that are alphabetically sorted and show the next token to write given the characters already written.
-Followed by tools capable of suggesting entire code blocks~\cite{Ciniselli2021} utilising statistical language models, such as n-gram models, are the origin of the use of data-driven strategies for code recommendation. 
+In-IDE code completion tools have improved a lot in recent years. Early code completion techniques include suggesting variables or method calls from user code bases~\cite{mandelin2005}, based on lists alphabetically sorted lists that show the next token to write given the registered characters.
+Followed by tools capable of suggesting entire code blocks~\cite{Ciniselli2021} utilizing statistical language models, such as n-gram models, is the origin of the use of data-driven strategies for code recommendation. 
 
-Karampatsis et al.~\cite{karampatsis} suggested that the most effective approach for code completion is based on neural network models. 
-The authors used byte pair encoding~\cite{BPE} as a method of overcoming the lack of vocabulary issue, demonstrating that their best model performs better than n-gram models and is easily transferable to other domains 
-resulting in a deep learning resurgence that has led to strong advances in the field of \cct{}. 
+Karampatsis et al.~\cite{karampatsis} suggested that the most effective code-completion approach is based on neural network models. 
+The authors used byte pair encoding~\cite{BPE} as a method of overcoming the lack of vocabulary issue, demonstrating that their best model performs better than n-gram models and is easily transferable to other domains resulting in a deep learning resurgence that has led to strong advances in the field of \cct{}. 
 
 Pre-trained large language models such as GPT-3~\cite{Gpt3}, CodeBERT~\cite{codebert}, Codex~\cite{copilot}, AlphaCode~\cite{alphacode} have dramatically improved the state-of-the-art on a code completion. 
-For example, even when the model's only input is a plain language description of the developer's desired implementation, these models are now capable of predicting the entire method with reasonable accuracy~\cite{copilot}.
+For example, even when the large language model's only input is a plain language description of the developer's desired implementation, these models are now capable of predicting the entire method with reasonable accuracy~\cite{copilot}.

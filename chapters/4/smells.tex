@@ -1,10 +1,10 @@
 \subsection{Code Smells}
-The code smells level is the next level of software abstractions after paradigms and idioms level in our taxonomy. 
-Code smells level requires the suggested code satisfy all the previous levels of abstractions and avoid common code smells in its suggestions, these include common bad practices found in public code. 
+The code smells level is the next level of software abstractions after our taxonomy's paradigms and idioms level. 
+Code smells level requires the suggested code to satisfy all the previous levels of abstractions and avoid common code smells in its suggestions. These include common bad practices found in public code. 
 
-This software abstraction level is also requires \cct{} to suggest the most optimized version of all of the code suggestions \cct{} could generate for the programming task.
+This software abstraction level also requires \cct{} to suggest the most optimized version of all of the code suggestions \cct{} could generate for the programming task.
 
-For example, considering the task of sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using common patterns like idioms and not including common code smells that occur in public code like edge case scenarios. 
+For example, consider the task of sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using common patterns like idioms and not including common code smells that occur in public code like edge case scenarios. 
 Figure~\ref{fig:smells} shows the example and the suggestion from \cct{} at this abstraction level.
 
 \begin{figure}[hbt!]
@@ -19,8 +19,8 @@ The goal of this level of software abstraction in our taxonomy is for \cct{} to 
 The capabilities required by \cct{} to satisfy this level of abstraction are as follows:
 \begin{enumerate}
     \item Identify common bad practices such as code smells that occur in public code~(training data).
-    \item Suggest solutions that does not have any code smells and unresolved edge cases.
-    \item Suggested code should the most optimized version of all the possible suggestions \cct{} could create for a given problem.
+    \item Suggest solutions that do not have code smells and unresolved edge cases.
+    \item Suggested code should be the most optimized version of all the possible suggestions \cct{} could create for a given problem.
     \item Satisfy requirements of all the levels below code smells in our taxonomy.
 \end{enumerate}
 
