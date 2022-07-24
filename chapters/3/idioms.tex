@@ -12,39 +12,125 @@ Copilot being closed source, we cannot investigate the potential reasons behind 
 
 \begin{figure}[hbt!]
     \centering
-    \includegraphics[width=\linewidth]{Figures/idioms_1.png}
-    \caption{List comprehension Pythonic idiom and Copilot suggestion}
+\begin{tcolorbox}[title=List Comprehension,boxsep=.25mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language={Python}]
+#list comprehension
+result_list = 
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=Python,escapechar=\%]
+% \noindent\textcolor{gray}{result\_list  =} % []
+for i in range(1,11):
+    result_list.append(i)
+\end{lstlisting}
+\tcbline
+\textbf{Pythonic way\footnote{source \cite{Alexandru2018}}:}
+\begin{lstlisting}[language=Python]
+result_list = [el for el in range(11)]
+\end{lstlisting}
+\end{tcolorbox}
+    \caption{List comprehension Pythonic idiom and Copilot top suggestion.}
     \label{fig:idioms_1}
 \end{figure}
 
 Figure~\ref{fig:idioms_1} shows the example of list comprehension Pythonic idiom, showing user input (i.e., human input), the top suggestion by Copilot, and the idiomatic way from Alexandru et al.~\cite{Alexandru2018}.
 
-\cct{} like Copilot should learn to detect idiomatic ways in public repositories and rank them higher than the most frequently used way in public repositories so that the first suggestion would be the idiomatic way rather than the non-idiomatic way, which is the desired behavior for \cct{} like Copilot. For the scope of this thesis, we leave resolving this problem as future work.
+The list comprehension suggested by Copilot may be accepted in other languages. 
+However, in Python there is a concise way saving 2 lines of code in this context, and it is also more readable. 
+Additionally, if we make the input size bigger we notice that Pythonic list comprehension is faster as well.~($\approx$1 sec faster when tested on a sample of 100 million).
 
-% \begin{tcolorbox}[title=List Comprehension,boxsep=.25mm]
-%     %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
-% \textbf{Human Input:}
-% \begin{lstlisting}[language={Python}]
-% #list comprehension
-% result_list = 
-% \end{lstlisting}
-% \tcbline
-% \textbf{Copilot Suggestion:}
-% \begin{lstlisting}[language=Python,escapechar=\%]
-% % \noindent\textcolor{gray}{result\_list  =} % []
-% for i in range(1,11):
-%     result_list.append(i)
-% \end{lstlisting}
-% \tcbline
-% \textbf{Idiomatic way\footnote{source \cite{Alexandru2018}}:}
-% \begin{lstlisting}[language=Python]
-% result_list = [el for el in range(11)]
-% \end{lstlisting}
-% \end{tcolorbox}
+Another example of Pythonic ways being faster than Copilot code suggestions is shown in figure~\ref{fig:idioms_3}.
+The code suggested by Copilot finds the index of every word in a given input string. 
+However, there is not only a lot of visual noise that comes from needing to initialize and build the list, but also the fact that when this function is called, it needs to build the entire list before returning. 
+If we want, say, the first 2 elements only, then we wasted resources unnecessarily to build the entire rest of the list.
 
-%%%%%% TODO: remember to update the screenshot if the source citation is different from the citation in the text %%%%%%
-Table~\ref{tab:all_idioms} shows the list of all the 25 idioms we tested and the ranking of the idiomatic way in Copilot suggestions (if it exists).
-All the Idioms shown in Table~\ref{tab:all_idioms} can be found in the \repl{} including the code used as input (i.e., human input), the top suggestion by Copilot, and the idiomatic way suggested in Alexandru et al.~\cite{Alexandru2018}, and Farook et al.~\cite{idioms}. 
+The Pythonic way of finding the index of every word in a given input string is to use a generator. 
+The time taken to execute the Copilot suggested function for the text shown in figure~\ref{fig:idioms_3} is 6.91 seconds. The Pythonic approach completed the function for the same text in 1.1e-05 seconds, making it significantly faster than the Copilot suggested code.
+
+\begin{figure}[hbt!]
+    \centering
+\begin{tcolorbox}[title=Find index of every word in input string,boxsep=.25mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language={Python}, keywords={yield}]
+# find index of every word in input string
+text = "this is Copilot testing...."
+def index_words(text):
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=Python,escapechar=\%]
+% \noindent\textcolor{gray}{def index\_words(text):} %
+    result = []
+    for i, word in enumerate(text.split()):
+		result.append((i, word))
+	return result
+\end{lstlisting}
+\tcbline
+\textbf{Pythonic way\footnote{source \cite{Alexandru2018}}:}
+\begin{lstlisting}[language=Python, keywords={def, if, for, in, yield}]
+def index_words(text):
+    if text:
+        sleep(0.1)
+        yield 0
+    for index, letter in enumerate(text):
+        if letter == ' ':
+            sleep(0.1)
+            yield index + 1
+\end{lstlisting}
+\end{tcolorbox}
+    \caption{Find index of every word in input string Pythonic idiom and Copilot top suggestion.}
+    \label{fig:idioms_3}
+\end{figure}
+
+The most Pythonic way of performing a task is the clearest, the best, or even the most optimal in a computational sense.
+Another important characteristic of idiomatic code is to make the code easier to understand and maintain. Being Pythonic helps to detect errors and even make fewer mistakes.
+
+Figure~\ref{fig:idioms_2} shows Copilot code suggestion for opening and writing to a file. 
+If we use code suggested by Copilot and if there is an exception while writing, the file will not be closed as the f.close() line will not be reached by the interpreter.
+However, in Pythonic way, the file is closed regardless of what happens inside the indented block of code. Clearly, Pythonic way is superior.
+
+\begin{figure}[hbt!]
+    \centering
+\begin{tcolorbox}[title=Open and write to a file,boxsep=.25mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language={Python}]
+#Open and write to a file
+\end{lstlisting}
+\tcbline
+\textbf{Copilot Suggestion:}
+\begin{lstlisting}[language=Python,escapechar=\%]
+f = open(`idioms.txt', `w')
+f.write(`Hello World')
+f.close()
+\end{lstlisting}
+\tcbline
+\textbf{Pythonic way\footnote{source \cite{Alexandru2018}}:}
+\begin{lstlisting}[language=Python]
+with open(`idioms.txt', `w') as f:
+    f.write(``Hello, World!")
+\end{lstlisting}
+\end{tcolorbox}
+    \caption{Open and write to a file Pythonic idiom and Copilot top suggestion.}
+    \label{fig:idioms_2}
+\end{figure}
+
+Table~\ref{tab:all_idioms} shows the list of all the 25 Pythonic idioms we tested and the ranking of the Pythonic way in Copilot suggestions (if it exists).
+All the Idioms shown in Table~\ref{tab:all_idioms} can be found in the \repl{} including the code used as input (i.e., human input), the top suggestion by Copilot, and the Pythonic way suggested in Alexandru et al.~\cite{Alexandru2018}, and Farook et al.~\cite{idioms}. 
+
+Copilot had the Pythonic way in its top 10 suggestions for 8 coding scenarios, where Copilot ranked the non-idiomatic approach as the top suggestion. 
+The ranking methodology of Copilot is not disclosed. However, the results suggest that it is heavily influenced by the frequency of the approach in the training data. 
+Copilot successfully suggested the idiomatic approach as its top suggestion in `set comprehension' and `if condition check value'~(idiom 7 \& 10 in table~\ref{tab:all_idioms}), which are one of the most frequently occurring idioms in open source code~\cite{Alexandru2018}.
+
+Copilot is more likely to have the idiomatic approach in its top 10 suggestions when there are only a few ways of performing a task. 
+For example, consider the `Boolean comparison idiom'; there are only two most common ways of performing the task, i.e., `if boolean:' or `if boolean == True.' Copilot had the non-idiomatic approach higher than the idiomatic approach in this case.
+
+\cct{} like Copilot should learn to detect idiomatic ways in public repositories and rank them higher than the most frequently used way in public repositories so that the first suggestion would be the idiomatic way rather than the non-idiomatic way, which is the desired behavior for \cct{} like Copilot. 
+For the scope of this thesis, we leave resolving this problem as future work.
 
 \renewcommand{\arraystretch}{1.45}
 \begin{table}[hbt!]

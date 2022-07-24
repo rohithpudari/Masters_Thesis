@@ -1,0 +1,62 @@
+\section{AI-supported Software Development}
+\label{cs2design}
+We began this thesis by analyzing Copilot code suggestions on Pythonic idioms and best practices in Javascript to understand the current boundaries of \cct{} like Copilot using a software abstraction taxonomy.
+In this section, we try to address \textbf{RQ-2} (Given the current boundary, how far is it from suggesting design decisions?) with a discussion on the complex nature of design decisions involving factors ranging from requirement analysis to maintenance, making it difficult for \cct{} like Copilot to detect the information from code files and suggest design decisions to satisfy the top software abstraction level of our taxonomy.
+Additionally, we discuss our vision for \cct{} like Copilot to satisfy the design level in our taxonomy and outline the difficulty its underlying Codex LLM approach might run into.
+Finally, we discuss how design choices change over time and outline the difficulties of \cct{} like Copilot to keep updating its suggestions and reflect the current design practices~(section~\ref{evolution}).
+
+Software development is a challenging, complex activity: It is common for tasks to be unique and to call for the analysis of ideas from other domains. Solutions must be inventively modified to address the requirements of many stakeholders.
+Software design is a crucial component of the software development activity since it determines the various aspects of the system, such as its performance, maintainability, robustness, security, etc.
+Design is typically viewed in the context of software engineering as both a process~\cite{design} that a development team engages in and the specifications~\cite{designdef} that the team produces. 
+Software design is typically carried out heuristically by pulling from the project context (such as architecturally significant needs), the design team's knowledge, and a constantly evolving set of patterns and styles from the literature. 
+
+Automating this software design process, which is the most abstract element in the software development lifecycle, will be challenging. 
+First, sufficient software design knowledge has to be collected to use as training data to create a good \cct{} that can suggest relevant architectural patterns. 
+Software design generally occurs in various developer communication channels such as issues, pull requests, code reviews, mailing lists, and chat messages for multiple purposes such as identifying latent design decisions, design challenges, design quality, etc. 
+Gathering all this data and generalizing those design decisions in training data to suggest relevant design choices to a user would be the vision for \cct{} to satisfy the design level.
+
+Stack Overflow\footnote{\url{https://stackoverflow.com/}}, the most popular question and answer (Q\&A) forum used by developers for their software development queries~\cite{sotorrent}.
+Software developers of all levels of experience conduct debates and deliberations in the form of questions, answers, and comments on Stack Overflow's extensive collection of topics about software development.
+Due to these qualities, Stack Overflow is a top choice for software developers looking to crowdsource design discussions and judgments, making it a good source of training data for \cct{} for design choices.
+
+Additionally, \cct{} at the design level should be capable of capturing design and module level concerns. 
+These include capturing design patterns~(such as Observer) and architectural tactics~(such as Heartbeat) to improve and personalize suggestions.
+The general understanding of a system's design that a software developer has is frequently susceptible to ``evaporation," which causes the developers to gradually lose knowledge of the design over time~\cite{martinse} making the process of gathering design data to train \cct{} a significant challenge.
+
+Organizing software design information is an active research area. Previously, this design knowledge was organized largely manually because the information was heavily context-specific and a lack of large datasets. A study by Gorton et al.~\cite{databases} showed a semi-automatic approach to populate design knowledge from internet sources for a particular (big data) domain, which can be a helpful approach for collecting software design relevant data to train \cct{}.
+
+Over the natural evolution of a software system, small changes accumulate, which can happen for various reasons, such as refactoring~\cite{fabio}, bug fixes~\cite{cotroneo}, implementation of new features, etc.
+These changes can be unique. However, they frequently repeat themselves and follow patterns~\cite{changes}. 
+Such patterns can provide a wealth of data for studying the history of modifications and their effects~\cite{martinchanges}, modification histories of fault fixes~\cite{daniel}, or the connections between code change patterns and adaptive maintenance~\cite{ijece}.
+However, to use this data, \cct{} should be able to identify these complex patterns existing in public code~(training data). Current \cct{} like Copilot struggled to detect much simpler patterns like Pythonic idioms. There is no evidence currently to suggest they can identify even more complex design patterns.
+
+Additionally, current \cct{} like Copilot does not support multi-file input. It is not possible to evaluate its current performance in design suggestions, as the software development process may include multiple folders with a file structure. 
+For example, MVC pattern generally includes multiple files acting as Model, View, and Controller. Using the current limitations of input on Copilot, i.e., a code block or a code file, it is not possible for \cct{} to deduce that the project is using the MVC pattern and adapt its suggestion to follow the MVC pattern and not suggest code where Model communicated directly with View. \cct{} must be capable of making suggestions in multiple program units to accommodate these more abstract design patterns.
+
+\cct{} should be able to adapt their suggestions to context-specific issues such as variable naming conventions and formatting. 
+This would be challenging as the existing guidelines are not standard in this space and mostly depend on context.
+
+\subsection{Evolution of design over time}
+\label{evolution}
+Software design is an ever-changing field that evolves along with technology, languages, and frameworks. As a result, either new design patterns are developed, or some existing ones are depreciated.
+\cct{} need to update their code suggestions regularly to reflect the changes in design practices. 
+This requires regularly updating the training data, and training costs are expensive.
+
+Design patterns are solutions to recurring design issues that aim to improve reuse, code quality, and maintainability.
+Design patterns have benefits such as decoupling a request from particular operations~(Chain of Responsibility and Command), making a system independent from software and hardware platforms~(Abstract Factory and Bridge), and independent from algorithmic solutions~(Iterator, Strategy, Visitor), or preventing implementation modifications~(Adapter, Decorator, Visitor). These design patterns are integral to software design and are used regularly in software development.
+However, these design patterns evolve. For instance, with React Framework's introduction, many new design patterns were introduced, such as Redux and Flux, which were considered to be an evolution over the pre-existing MVC design pattern.
+\cct{} trained before this evolution will not have any data of the new design patterns such as Redux and Flux, making them incapable of suggesting those design patterns to the user. 
+
+Similarly, coding practices evolve. 
+For example, in JavaScript, callbacks were considered the best practice in the past to achieve concurrency, which was replaced by promises. 
+When the user has a goal to achieve asynchronous code, there are two ways to create async code: callbacks and promises. Callback allows us to provide a callback to a function, which is called after completion. With promises, you can attach callbacks to the returned promise object.
+One common issue with using the callback approach is that when we have to perform multiple asynchronous operations at a time, we can easily end up with something known as callback hell.
+As the name suggests, it is harder to read, manage, and debug. The simplest way to handle asynchronous operations is through promises. In comparison to callbacks, they can easily manage many asynchronous activities and offer better error handling.
+This makes \cct{} be updated regularly to reflect new changes in coding practices and design processes of software development. 
+
+Additionally, Bad Practices in using promises for asynchronous JavaScript like not returning promises after creation and forgetting to terminate chains without a catch statement, which are explained in documentation\footnote{\label{docs}\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises}} and StackOverflow\footnote{\url{https://stackoverflow.com/questions/30362733/handling-errors-in-promise-all/}} are not known to Copilot and suggested code with those common anti-patterns as they could have occurred more frequently in Copilot training data. 
+While testing, Copilot suggested code specifically mentioned in the JavaScript documentation as a common bad practice and anti-pattern\footref{docs}.
+However, this is beyond the scope of this study and will be part of future work.
+
+In conclusion, Software design is an abstract field of software development, where humans struggle to make correct design decisions using all their previous experience and various sources of information to satisfy the requirements of a system. 
+Creating \cct{} to automate the software design process requires gathering relevant training data and regular updates to the training data to reflect the new changes in the evolution of the software development process. Further, the current Copilot approach of token-level suggestions needs to be upgraded to move beyond tokens~(shown in \ref{tokens}) to facilitate multi-file input to help make \cct{} capable of satisfying the design level of our taxonomy.

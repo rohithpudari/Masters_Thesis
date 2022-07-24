@@ -2,13 +2,19 @@
 \label{chapter:framework}
 
 \section{Introduction}
-In Chapter~\ref{chapter:methodology}, we identified that Copilot does not perform well in detecting and suggesting language idioms and best practices.
-The scope of capability for \cct{} like Copilot is uncertain. 
-In this chapter, we try to create a metric for answering \textbf{RQ-1} (What are the current boundaries of code completion tools) with a taxonomy of six software abstraction levels to help access the current capabilities of \cct{} such as Copilot. 
+Copilot works best in creating boilerplate and repetitive code patterns~\cite{Copilot-web}.
+However, the code suggested by \cct{} like Copilot are found to have simple coding mistakes and security vulnerabilities. Several classes of errors have been discovered, which follow from the presence of these same errors in training data of Copilot~(shown in section~\ref{challenges}).
+In Chapter~\ref{chapter:methodology}, we identified that Copilot does not perform well in detecting and suggesting Pythonic idioms and best practices in JavaScript.
+The scope of capability and the quality of code suggestions made by \cct{} like Copilot is uncertain. 
 
+In this chapter, we try to create a metric for answering \textbf{RQ-1} (What are the current boundaries of code completion tools) with a taxonomy of six software abstraction levels to help access the current capabilities of \cct{} such as Copilot. 
 We explain each software abstraction level in the taxonomy and the capabilities required by \cct{} to satisfy the software abstraction level. 
-We try to delineate where current \cct{} such as Copilot, are best able to perform and where more complex software engineering tasks overwhelm them. 
-Additionally, We use a sorting routine as an example scenario to show how a \cct{} code suggestion looks like in every level of abstraction in our taxonomy.
+We try to delineate where current \cct{} such as Copilot, are best able to perform and where more complex software engineering tasks overwhelm them using a software abstraction hierarchy where ``basic programming functionality'' such as code compilation and syntax checking is the lowest abstraction
+level, while Software architecture analysis and design are at the highest abstraction
+level
+Additionally, we use a sorting routine as an example scenario to show how a \cct{} code suggestion looks like in every level of abstraction in our taxonomy.
+
+Finally, we try to address \textbf{RQ-2} (Given the current boundary, how far is it from suggesting design decisions?) with a discussion on the level of complexities and challenges involved in creating \cct{} that can satisfy design level compared to \cct{} satisfying code smells level in our taxonomy.
 
 \subsection{Motivation}
 To center our analysis on creating a software abstraction hierarchy to create a metric for answering \textbf{RQ-1} (What are the current boundaries of code completion tools), 
@@ -34,4 +40,5 @@ We think that a similar hierarchy exists in \AISE{}. Before worrying about softw
 \input{chapters/4/smells}
 \input{chapters/4/low_design}
 \input{chapters/4/high_design}
+\input{chapters/4/cs2design}
 \input{chapters/4/summary}

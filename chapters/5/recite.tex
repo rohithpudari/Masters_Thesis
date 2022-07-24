@@ -1,0 +1,16 @@
+\section{Copilot Code Recitation}
+\label{recite}
+% not here but in the discussion the thesis should discuss what it means to “recite” an idiom. Why or why not does Copilot not recommend a particular idiom? Readers will not understand the technical reasons - explain it.
+
+\cct{} like Copilot are trained on billions of lines of code. The code suggestions Copilot makes to a user are adapted to the specific coding scenario, but the processing behind each code suggestion is ultimately taken from training~(public) code.
+A recent study conducted by Bender et al.~\cite{stochastic_parrots} showed that LLMs like GPT-3~\cite{Gpt3} and Codex~\cite{copilot} could recite code suggestions identical to the code present in training data, which in turn can cause issues like license infringements~\cite{code_clone}.
+
+Traditional N-gram LMs like SLANG~\cite{slang} and CACHECA~\cite{cacheca}~(shown in section~\ref{ngrams}) can only model relatively local dependencies, predicting each word given the preceding sequence of N words (usually 5 or fewer).
+However, more advanced models like the Transformer LMs used in Codex~\cite{copilot} capture much larger windows and can produce code that is seemingly not only fluent but also coherent even over large code blocks. We were able to generate a whole 980 lines of a code file using Copilot with an input of the first 15 lines of that file\footnote{all experiments are documented in \repl{}}.  
+
+This code recitation behavior of LLMs like Codex~\cite{copilot} can help with satisfying paradigms and idioms level of our taxonomy.
+Idioms are the most accepted approaches in public~(training) data. 
+The ideal behavior of \cct{} like Copilot is to recognize these idiomatic approaches to solve a programming task from training data and use them in code suggestions.
+
+Similarly, Copilot can also recite common code smells in public~(training) data. \cct{} like Copilot needs to recognize the difference between an idiomatic approach and a code smell in training data. 
+Metrics like code repository popularity and StackOverflow upvotes on the code can help \cct{} like Copilot to distinguish between idiomatic approaches and code smells. 

@@ -14,10 +14,18 @@ If \cct{} make a suggestion, is that suggestion accurate and optimal? Should a u
 In recent years, there have been considerable improvements in the field of \cct{}. 
 Copilot has been at the forefront and is particularly impressive in understanding the context and semantics of code with just a few lines of comments or code as input and can suggest the next few lines or even entire functions in some cases~\cite{copilot}.
 
-The biggest challenge with using tools like Copilot is their training data, These tools are trained on existing software source code, and training costs are expensive.
-Several classes of errors have been discovered (shown in section~\ref{challenges}), which follow from the presence of these same errors in public (training) data. There is a need to stay cautious about common bugs people make, creeping into Copilot suggestions and keeping Copilot updated to the ever-changing best practices or new bug fixes in public repositories.
+The biggest challenge with using tools like Copilot is their training data. 
+These tools are trained on existing software source code, and training costs are expensive.
+Several classes of errors have been discovered (shown in section~\ref{challenges}), which follow from the presence of these same errors in public (training) data. 
+There is a need to stay cautious about common bugs people make, creeping into Copilot suggestions and keeping Copilot updated to the ever-changing best practices or new bug fixes in public repositories.
 
-Understanding the current limitations of Copilot will help developers use \cct{} effectively. The advantage of knowing where Copilot is good/bad lets users use these tools more efficiently by letting \cct{} take over where they excel and focus more on tasks where \cct{} are shown to have struggled with the quality of code suggestions.
+Understanding the current limitations of Copilot will help developers use \cct{} effectively. 
+The advantage of knowing where Copilot is good/bad lets users use these tools more efficiently by letting \cct{} take over where they excel and focus more on tasks where \cct{} are shown to have struggled with the quality of code suggestions.
+
+A taxonomy of software abstractions would help create a formal structure to better understand the capabilities and limitations of \cct{} like Copilot. 
+A taxonomy helps describe the hierarchical stages of software abstractions at which \cct{} like Copilot are operating. 
+For example, Copilot is capable of suggesting syntactical code but cannot suggest architectural tactics.
+Creating a taxonomy of software abstractions can be useful in developing new \cct{} and measuring their capabilities.
 
 Another advantage of a taxonomy of software abstractions makes code suggestions better in complex situations, shifting research focus to make \cct{} better at tasks shown to have struggled with the quality of code suggestions, minimizing the input required by the user to make \cct{} create meaningful, quality suggestions.
 

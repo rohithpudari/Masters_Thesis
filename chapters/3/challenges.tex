@@ -1,9 +1,12 @@
 \section{Background \& Motivation}
 \label{challenges}
-Code completion tools are very useful but are often limited to the generation of single elements (e.g., method calls and properties) and the usage of templates. Furthermore, too many recommendations can decrease the usefulness of the tool~\cite{Proksch2015}. 
-Some of these basic programming challenges have been already documented and are, we suspect, very much under consideration by the corporate teams behind Copilot and Codex. Since these tools are trained on existing software source code and training costs are expensive, several classes of errors have been discovered, which follow from the presence of these same errors in public (training) data.
+Code completion tools are very useful but are often limited to the generation of single elements (e.g., method calls and properties) and the usage of templates. 
+Furthermore, too many recommendations can decrease the usefulness of the tool~\cite{Proksch2015}. 
+\cct{} must be accurate with its code suggestions while minimizing the number of different code suggestions recommended to the user.
 
 Copilot can make simple coding mistakes, such as not allowing for an empty array in a sort routine\footnote{all examples are documented in our \repl{}.}. Copilot does not understand security vulnerabilities, so it will suggest code that allows for a \textsf{log4shell} vulnerability\footnote{\url{https://www.wiz.io/blog/10-days-later-enterprises-halfway-through-patching-log4shell/}}, or common SQL injection attacks. A recent study by Pearce et al.~\cite{copilot_security} showed that approximately 40\% of the code suggested by Copilot is vulnerable when tested on 89 different scenarios for Copilot to complete.
+Some of these basic programming challenges have been already documented and are, we suspect, very much under consideration by the corporate teams behind Copilot and Codex. 
+Since these tools are trained on existing software source code and training costs are expensive, several classes of errors have been discovered, which follow from the presence of these same errors in public (training) data.
 Similarly, concerns have been raised about Copilot license compliance and copyright violation~\cite{code_clone}; with similar input data, Copilot suggests identical code to existing code on GitHub, which may be under copyright. 
 As it is trained on public data collected in May 2020 from 50 million public repositories on GitHub~\cite{copilot}, any code uploaded after that date is absent in the knowledge base of Copilot. 
 % The training data for Copilot was collected in May 2020 from 50 million public repositories on GitHub~\cite{copilot}. 
@@ -18,6 +21,14 @@ Clone detection techniques can help find places where code violates the copyrigh
 Better machine learning approaches, using active learning or fine-tuning, might help learn local lessons~\cite{Menzies2013} for customization in the case of identifier naming or formatting.
 In most of these cases, good tools exist already for this. 
 
-We believe that while heuristic, such flaws can be fixed and should be fixed in short order. 
-We believe that problems are harder to fix because straightforward corrections may not exist and rules for finding problems are more challenging to specify than those in smell detectors or linters~\cite{Ernst2017} like language idioms and code smells. That's why it is crucial to find the boundaries of \cct{} like Copilot~(\textbf{RQ 1}) and create a clear understanding of where can we use \cct{} like Copilot and where should the user be vigilant in using \cct{} code suggestions.
-To achieve this, we conduct an exploratory study to find if \cct{} tools like Copilot suggest the optimal way in their suggestions.
+Although these are clearly challenges, Copilot seems already to be on its way to fixing them, like a filter introduced by GitHub to suppress code suggestions containing code that matches public code on GitHub. 
+However, what is more difficult to envision are the problems that are harder to fix because straightforward corrections may not exist, and rules for finding problems are more challenging to specify than those in smell detectors or linters~\cite{Ernst2017} like language idioms and code smells.
+
+Developers often discuss software architecture and actual source code implementations in online forums, chat rooms, mailing lists, or in person. 
+Programming tasks can be solved in more than one way. 
+The best way to proceed can be determined based on case-specific conditions, limits, and conventions. Strong standards and a shared vocabulary make communication easier while fostering a shared understanding of the issues and solutions related to software development.
+However, this takes time and experience to learn and use idiomatic approaches~\cite{Alexandru2018}.
+
+\cct{} can help steer users into using more idiomatic approaches with its code suggestions or vice-versa.
+This makes it crucial to find the boundaries of \cct{} like Copilot~(\textbf{RQ 1}) and create a clear understanding of where can we use \cct{} like Copilot and where should the user be vigilant in using \cct{} code suggestions.
+To achieve this, we conduct an exploratory study to find if \cct{} tools like Copilot suggest the recommended best coding practices in their suggestions.

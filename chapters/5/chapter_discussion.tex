@@ -1,20 +1,25 @@
-\startchapter{Discussion, Limitations \& Implications}
+\startchapter{Discussion, Future Work and Conclusion}
 \label{chapter:discussion}
 
 \section{Introduction}
-We began this thesis by analyzing Copilot code suggestions on Pythonic idioms, and Javascript code smells to understand the current boundaries of \cct{} like Copilot using a software abstraction taxonomy.
-In this chapter, we try to address \textbf{RQ-2} (Given the current boundary, how far is it from suggesting design decisions?) with a discussion on the complex nature of design decisions involving factors ranging from requirement analysis to maintenance, making it difficult for \cct{} like Copilot to detect the information from code files and suggest design decisions to satisfy the top software abstraction level of our taxonomy.
+We began this thesis with an analysis of Copilot code suggestions on Pythonic idioms, and Javascript best practices to understand the current boundaries of AI-supported code completion tools like Copilot using a software abstraction taxonomy. 
+In this chapter, we first begin by extending this discussion by comparing Copilot performance on Pythonic idioms and Javascript best practices. In section~\ref{performance}, we discuss the differences in the performance and ranking of Copilot code suggestions on Pythoic idoms and JavaScript best practices. We also discuss how Copilot was able to suggest idiomatic code for some coding scenarios.
 
-In section~\ref{cs2design}, we discuss our vision for \cct{} like Copilot to satisfy the design level in our taxonomy and outline the difficulty its underlying Codex LLM approach might run into.
-Further, we discuss how design choices change over time and outline the difficulties of \cct{} like Copilot to keep updating its suggestions and reflect the current design practices~(section~\ref{evolution}).
-Having established the software abstraction hierarchy to help assess the capabilities of \cct{}, in section~\ref{limitations}, we report on the threats to the validity of the research presented in this thesis and the steps we have taken to mitigate these threats.
+Furthermore, Having established the software abstraction hierarchy to help assess the capabilities of \cct{}, 
+in section~\ref{recite}, we discuss what it means to recite code from training data of \cct{} like Copilot.
+Additionally, we discuss how code recitation is an ideal behavior for \cct{} like Copilot to suggest idiomatic code but not for code smells.
 
-We conclude this chapter by discussing how this study could be extended further, some implications for researchers and practitioners, and some future works that our study enables~(section~\ref{future}).
+In this second part of this thesis, we discussed our taxonomy of software abstractions and the challenges involved in creating \cct{} that are capable of satisfying the design level of our taxonomy. In section~\ref{implications}, we report on some implications for researchers and practitioners.
+Finally, in section~\ref{limitations}, we report on the threats to the validity of the research presented in this thesis.
 
-\input{chapters/5/cs2design}
+% We conclude this chapter by discussing how this study could be extended further, some implications for researchers and practitioners, and some future works that our study enables~(section~\ref{future}).
+
+
+\input{chapters/5/ranking}
+\input{chapters/5/recite}
 \input{chapters/5/implications}
 \input{chapters/5/limitations}
 \input{chapters/5/explaninability}
 \input{chapters/5/control}
 \input{chapters/5/future}
-\input{chapters/5/summary}
+\input{chapters/5/chapter_conclusion}

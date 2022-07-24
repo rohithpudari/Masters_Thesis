@@ -1,15 +1,35 @@
 \subsection{Correctness}
 \label{correctness}
-Correctness is the second level of software abstraction in our taxonomy. In this level, the \cct{} should suggest code that is not only syntactically correct but also solves the programming task. 
-This level does not require \cct{} to suggest the optimal solution possible for the programming task but to be able to suggest a solution to the programming task.
+Correctness is the second level of software abstraction in our taxonomy. 
+\cct{} at this level should be capable of suggesting code that is not only syntactically correct but also solves the programming task. 
+This level does not require \cct{} to suggest the best possible coding solution for the programming task but to be able to suggest a decent solution to the programming task which may or may not resolve all the edge cases of the given programming task.
 
 For example, consider the programming task of performing a sorting operation on a list of numbers. To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, which is not required to be the most efficient way of sorting a list.
 Figure~\ref{fig:correctness} shows the list sorting example and the Python code suggestion from \cct{} at this abstraction level, which performs the sorting operation.
 
 \begin{figure}[hbt!]
     \centering
-    \includegraphics[width=.9\linewidth]{Figures/correctness.png}
-    \caption{Code suggestion of \cct{} at correctness level}
+\begin{tcolorbox}[title=Correctness level suggestion for sort routine,boxsep=.15mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language={Python}]
+# sorting a list
+arr = [2,4,1,3,7,5]
+\end{lstlisting}
+\tcbline
+\textbf{\cct{} suggestion:}
+\begin{lstlisting}[language={Python}]
+n = len(arr)
+for i in range(n):
+    for j in range(n-1):
+        if arr[j] > arr[j+1]:
+            temp = arr[j]
+            arr[j] = arr[j+1]
+            arr[j+1] = temp
+print(arr)
+\end{lstlisting}
+\end{tcolorbox}
+    \caption{Code suggestion of \cct{} at correctness level.}
     \label{fig:correctness}
 \end{figure}
 
@@ -22,23 +42,3 @@ The capabilities required by \cct{} to satisfy this level of abstraction are as 
     \item Satisfy requirements of all the levels below correctness in our taxonomy.
 \end{enumerate}
 
-% \begin{tcolorbox}[title=Correctness level suggestion for sort routine,boxsep=.15mm]
-%     %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
-% \textbf{Human Input:}
-% \begin{lstlisting}[language={Python}]
-% # sorting a list
-% arr = [2,4,1,3,7,5]
-% \end{lstlisting}
-% \tcbline
-% \textbf{\cct{} suggestion:}
-% \begin{lstlisting}[language={Python}]
-% n = len(arr)
-% for i in range(n):
-%     for j in range(n-1):
-%         if arr[j] > arr[j+1]:
-%             temp = arr[j]
-%             arr[j] = arr[j+1]
-%             arr[j+1] = temp
-% print(arr)
-% \end{lstlisting}
-% \end{tcolorbox}

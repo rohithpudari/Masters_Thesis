@@ -1,16 +1,34 @@
 \subsection{Paradigms and Idioms}
-The paradigms and idioms are our taxonomy's third level of software abstraction. 
-This level requires the suggested code to satisfy all the previous levels of abstractions and use common paradigms and language idioms in its code suggestions. These include common practices of performing a programming task. 
+Paradigms and idioms are our taxonomy's third level of software abstraction. 
+This level requires the code suggested by \cct{} to satisfy all the previous levels of abstractions and use common paradigms and language idioms in its code suggestions. 
+These include common practices of solving a programming task. 
 
-For example, consider the task of sorting operation on a list of numbers. 
+Returning to our running example of performing a sorting operation on a list of numbers. 
 To satisfy this level of abstraction, \cct{} should suggest a syntactically correct list sorting code, using idiomatic ways in its code suggestions, like the Pythonic way of swapping items in a list~(line 5 in figure~\ref{fig:idioms}), As opposed to suggesting non-idiomatic approaches like creating another temporary variable to swap items in a list shown in correctness level~(figure~\ref{fig:correctness}).
 
 Figure~\ref{fig:idioms} shows the sorting example and the Python code suggestions from \cct{} at this abstraction level.
 
 \begin{figure}[hbt!]
     \centering
-    \includegraphics[width=\linewidth]{Figures/idioms.png}
-    \caption{Code suggestion of \cct{} at paradigms and idioms level}
+\begin{tcolorbox}[title=Idioms level suggestion for sort routine,boxsep=.15mm]
+    %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
+\textbf{Human Input:}
+\begin{lstlisting}[language={Python}]
+# sorting a list
+arr = [2,4,1,3,7,5]
+\end{lstlisting}
+\tcbline
+\textbf{\cct{} suggestion:}
+\begin{lstlisting}[language={Python}]
+n = len(arr)
+for i in range(n):
+	for j in range(n-1):
+		if arr[j] > arr[j+1]:
+			arr[j], arr[j+1] = arr[j+1], arr[j]
+print(arr)
+\end{lstlisting}
+\end{tcolorbox}
+    \caption{Code suggestion of \cct{} at paradigms and idioms level.}
     \label{fig:idioms}
 \end{figure}
 
@@ -23,21 +41,3 @@ The capabilities required by \cct{} to satisfy paradigms and idioms level of sof
     \item Satisfy requirements of all the levels below paradigms and idioms in our taxonomy.
 \end{enumerate}
 
-% \begin{tcolorbox}[title=Idioms level suggestion for sort routine,boxsep=.15mm]
-%     %https://tex.stackexchange.com/questions/337909/tcolorbox-tcbline-style
-% \textbf{Human Input:}
-% \begin{lstlisting}[language={Python}]
-% # sorting a list
-% arr = [2,4,1,3,7,5]
-% \end{lstlisting}
-% \tcbline
-% \textbf{\cct{} suggestion:}
-% \begin{lstlisting}[language={Python}]
-% n = len(arr)
-% for i in range(n):
-% 	for j in range(n-1):
-% 		if arr[j] > arr[j+1]:
-% 			arr[j], arr[j+1] = arr[j+1], arr[j]
-% print(arr)
-% \end{lstlisting}
-% \end{tcolorbox}

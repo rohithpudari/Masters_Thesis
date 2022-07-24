@@ -6,6 +6,7 @@ We base our conclusions on API results, which complicate versioning and clarity.
 
 \subsection{Internal Validity}
 Copilot is sensitive to user inputs, which hurts replicability as a different formulation of the problem might produce a different set of suggestions. 
+Because Copilot uses Codex, a generative model, its outputs cannot be precisely duplicated. Copilot can produce various responses for the same request at . Copilot is a closed-source, black-box application that runs on a distant server and is therefore inaccessible to general users~(such as the author of this thesis).
 Thus a reasonable concern is that our (human) input is unfair to Copilot, and with some different inputs, the tool might generate the correct idiom. 
 For replicability, we archived all examples in our replication package at \repl{}.
 %\neil{can we try this? }\rohith{idioms are mostly one-lined, and longer inputs/suggestions could be described as bad practices/design smells}
@@ -15,13 +16,18 @@ The taxonomy of the software abstraction hierarchy presented in this thesis reli
 Other approaches for classifying software abstractions~(such as the user's motivation for initiating \cct{}) might result in different taxonomy.
 The hierarchy of software abstractions presented in this thesis relies on our understanding of software abstractions, and the results of Copilot code suggestions on language idioms and code smells. Further, we present our results using Python and JavaScript. It is possible that using some other programming language or \cct{} might have different results.
 
-\subsection{Bias, Fairness, and representation}
+We intended to show where Copilot cannot consistently generate the preferred answer. We biased our evaluation to highlight this by choosing input that simulates what a less experienced programmer might enter. 
+But we argue this is reasonable: for one, these are precisely the developers likely to use Copilot suggestions and unlikely to know the idiomatic usage.
+More importantly, a lack of suggestion stability seems to come with its own set of challenges, which are equally important to understand.
+
+\subsection{Bias, Fairness, and Representation}
 Code generation models are susceptible to repeating the flaws and biases of their training data, just like natural language models~\cite{Gpt3}. These models can reinforce and maintain societal stereotypes when trained on a variety of corpora of human data, having a disproportionately negative effect on underprivileged communities. 
 Additionally, bias may result in outdated APIs or low-quality code that reproduces problems, compromising performance and security. This might result in fewer people using new programming languages or libraries.
 
-We intended to show where Copilot cannot consistently generate the preferred answer. We biased our evaluation to highlight this by choosing input that simulates what a less experienced programmer might enter. 
-But we argue this is reasonable: for one, these are precisely the developers likely to use Copilot suggestions and unlikely to know the idiomatic usage.
-More importantly, a lack of suggestion stability seems to come with its own set of challenges, which are equally important to understand.% (to use an analogy, we would expect all self-driving vehicles to make similar choices when confronted with similar circumstances). 
+Codex has the ability to produce code that incorporates stereotypes regarding gender, ethnicity, emotion, class, name structure, and other traits~\cite{copilot}.
+This issue could have serious safety implications, further motivating us to prevent over-reliance, especially in the context of users who might over-rely on Codex or utilise it without properly thinking through project design.
+
+% (to use an analogy, we would expect all self-driving vehicles to make similar choices when confronted with similar circumstances). 
 %this gets to the top levels of Koopmann's pyramid.
 % Access to Copilot is currently restricted. 
 % Working with GitHub's API - not open
@@ -30,7 +36,16 @@ More importantly, a lack of suggestion stability seems to come with its own set 
 
 \subsection{Ethical Considerations}
 \label{ethics}
-Codex imports packages at different rates~\cite{copilot}, which could advantage some authors over others. As Copilot is both a \emph{black-box} and \emph{closed-source}, One can only speculate on the reasoning behind each suggestion. For example, what sort algorithm to use. Not just a technical question but much more ethically challenging on why a particular algorithm is suggested than a flash fill such as a coding contest question.
+Packages or programs created by third parties are frequently imported within a code file. Software engineers rely on functions, libraries, and APIs for the majority of what called as ``boilerplate" code rather than constantly recreating the wheel. 
+However, there are numerous choices for each task: For machine learning, use PyTorch or TensorFlow; for data visualization, use Matplotlib or Seaborn; etc.
 
-Additionally, malicious individuals might also utilize \cct{}. Better tools might make it simpler to generate new malware variants, enabling them to evade detection by security software~(which often relies on databases of file fingerprints). 
-Tools that increase developer productivity would likewise increase developer productivity when creating harmful malware.
+Reliance on import suggestions from \cct{} like Copilot may increase as they get used to using \cct{}. 
+Users may employ the model as a decision-making tool or search engine as they get more adept at "prompt engineering" with Codex. 
+Instead of searching the Internet for information on "which machine learning package to employ" or "the advantages and disadvantages of PyTorch vs. Tensorflow," a user may now type "\# import machine learning package" and rely on Codex to handle the rest.
+Based on trends in its training data, Codex imports substitutable packages at varying rates~\cite{copilot}, which may have various effects. 
+Different import rates set by Codex may result in subtle mistakes when a particular import is not advised, increased robustness when an individual's alternative package would have been worse, and/or an increase in the dominance of an already powerful group of people and institutions in the software supply chain.
+
+As a result, certain players may solidify their position in the package market, and Codex may be unaware of any new packages created following the first collection of training data. The model may also recommend deprecated techniques for packages that are already in use. Additional research is required to fully understand the effects of code creation capabilities and effective solutions.
+
+% Despite the fact that many packages are free, developers and companies with popular packages can earn incentives, and free packages can act as covers for paid items. 
+% Therefore, the import patterns used by Codex and other code generation models may have significant economic effects on individuals who create and maintain packages, in addition to possible safety or security effects.
