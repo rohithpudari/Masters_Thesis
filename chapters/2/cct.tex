@@ -22,7 +22,7 @@ N-grams are rarely employed as a stand-alone solution in modern natural language
 \emph{Short distance dependencies -} N-grams can only represent relationships between a word and its n-1 predecessors, which implies they don't have long-distance dependencies and lose context after few lines of code.
 Because it would be difficult to foresee how an imported library function or an initialized variable would be used, this restricts the potential use of N-grams for advanced code completion tasks such as suggesting variables or functions initialized in another class in the same file.
 
-\emph{Out of Vocabulary~(OOV) problem - } In the specific application of code completion, it's possible that a developer utilizes a variable or library in our particular application that isn't included in the training set. 
+\emph{Out of Vocabulary~(OOV) problem - } In the specific application of code completion, it is possible that a developer utilizes a variable or library in our particular application that is not included in the training set. 
 As a result, N-gram models would never predict that term, preventing us from using it as a prediction. This makes the code completion tools restricted to the knowledge of the training set, making it impossible to generalize.
 
 % Vector word representations are introduced to tackle the drawbacks of N-grams.

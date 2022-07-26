@@ -1,11 +1,14 @@
-\section{Copilot code suggestions}
+\section{Discussion}
+In this section, we discuss the differences in the performance and ranking of Copilot code suggestions on Pythonic idoms and JavaScript best practices. We then discuss what is code recitation and how it affects \cct{} like Copilot.
+.
+\subsection{Copilot code suggestions}
 \label{performance}
 % in the discussion, speculate on why there is variance. When I say “speculate” I mean offer some reasoning that follows a logical process, based on some evidence. WHy is “accessing properties” #1 but “array callback” is lower? What are the commonalities here? 
 Copilot code suggestions for our coding scenarios in Pythonic idioms and JavaScript best practices~(shown in Chapter~\ref{chapter:methodology}) has three possible outcomes: Copilot suggesting the recommended approach as its top suggestion~(ideal behavior), Copilot having the recommended approach in its top 10 code suggestions but not the top suggestion~(less ideal) and Copilot does not have the recommended approach in any of its suggestions~(worst case).
 
 Copilot recommending the idiomatic approach as its \emph{top suggestion} is the ideal behavior for all \cct{}.
 This may require the recommended approach to be the most popular method to solve the programming task. For example, Copilot successfully suggested the idiomatic approach as its top suggestion for idioms 7~(set comprehension) and 10~(if condition check value). 
-Both those programming tasks do not have more than 2 popular methods of solving the problem. Similarly, for code smells, Copilot successfully suggested the JavaScript best practice as its top suggestion for best practices 7~(accessing properties), 15~(converting array-like object to array), and 23~(check boolean value). These programming tasks also have the best practice approach as the most common approach used. 
+Both those programming tasks have the idiomatic approach as one of the common approaches of solving the problem. Similarly, for code smells, Copilot successfully suggested the JavaScript best practice as its top suggestion for best practices 7~(accessing properties), 15~(converting array-like object to array), and 23~(check boolean value). These programming tasks also have the best practice approach as a common approach for solving the programming task. 
 To make \cct{} like Copilot suggest recommended approach as the top code suggestion, the approach must be the most common way of solving the given programming task. 
 
 Copilot recommending the idiomatic approach in its \emph{top 10 suggestions} is not the ideal behavior but better than not having the idiomatic approach in its suggestions at all. 

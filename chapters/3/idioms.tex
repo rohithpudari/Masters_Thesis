@@ -42,13 +42,13 @@ The list comprehension suggested by Copilot may be accepted in other languages.
 However, in Python there is a concise way saving 2 lines of code in this context, and it is also more readable. 
 Additionally, if we make the input size bigger we notice that Pythonic list comprehension is faster as well.~($\approx$1 sec faster when tested on a sample of 100 million).
 
-Another example of Pythonic ways being faster than Copilot code suggestions is shown in figure~\ref{fig:idioms_3}.
+Another example of Pythonic ways being faster than Copilot code suggestions is shown in Figure~\ref{fig:idioms_3}.
 The code suggested by Copilot finds the index of every word in a given input string. 
 However, there is not only a lot of visual noise that comes from needing to initialize and build the list, but also the fact that when this function is called, it needs to build the entire list before returning. 
 If we want, say, the first 2 elements only, then we wasted resources unnecessarily to build the entire rest of the list.
 
 The Pythonic way of finding the index of every word in a given input string is to use a generator. 
-The time taken to execute the Copilot suggested function for the text shown in figure~\ref{fig:idioms_3} is 6.91 seconds. The Pythonic approach completed the function for the same text in 1.1e-05 seconds, making it significantly faster than the Copilot suggested code.
+The time taken to execute the Copilot suggested function for the text shown in Figure~\ref{fig:idioms_3} is 6.91 seconds. The Pythonic approach completed the function for the same text in 1.1e-05 seconds, making it significantly faster than the Copilot suggested code.
 
 \begin{figure}[hbt!]
     \centering
@@ -120,7 +120,7 @@ with open(`idioms.txt', `w') as f:
 \end{figure}
 
 Table~\ref{tab:all_idioms} shows the list of all the 25 Pythonic idioms we tested and the ranking of the Pythonic way in Copilot suggestions (if it exists).
-All the Idioms shown in Table~\ref{tab:all_idioms} can be found in the \repl{} including the code used as input (i.e., human input), the top suggestion by Copilot, and the Pythonic way suggested in Alexandru et al.~\cite{Alexandru2018}, and Farook et al.~\cite{idioms}. 
+All the Idioms shown in Table~\ref{tab:all_idioms} can be found in the \repl{} including the code used as input (i.e., human input), the top suggestion by Copilot, and the Pythonic way suggested in Alexandru et al.~\cite{Alexandru2018}, and Farook et al.~\cite{idioms}.
 
 Copilot had the Pythonic way in its top 10 suggestions for 8 coding scenarios, where Copilot ranked the non-idiomatic approach as the top suggestion. 
 The ranking methodology of Copilot is not disclosed. However, the results suggest that it is heavily influenced by the frequency of the approach in the training data. 
@@ -153,13 +153,13 @@ For the scope of this thesis, we leave resolving this problem as future work.
          \hline
          6 & List enumeration & No \\
          \hline
-         \textbf{7} & \textbf{Set comprehension} & \textbf{1\textsuperscript{th}} \\
+         \textbf{7} & \textbf{Set comprehension} & \textbf{1\textsuperscript{st}} \\
          \hline
          8 & Read and print from a file & 5\textsuperscript{th} \\
          \hline
          9 & Add int to all list numbers & No \\
          \hline
-         \textbf{10} & \textbf{If condition check value} & \textbf{1\textsuperscript{th}} \\
+         \textbf{10} & \textbf{If condition check value} & \textbf{1\textsuperscript{st}} \\
          \hline
          11 & Unpacking operators & No \\
          \hline

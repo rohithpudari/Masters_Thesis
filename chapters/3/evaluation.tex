@@ -1,6 +1,6 @@
-\subsection{Evaluation of Copilot suggestions}
+\subsection{Evaluation of Copilot code suggestions}
 \label{evaluation}
-We compare Copilot code suggestions against Pythonic idioms and best practices retrieved from our sources~(Alexandru et al.~\cite{Alexandru2018} and Farook et al.~\cite{idioms} for Pythonic idioms and AirBNB javascript coding style guide~\cite{airbnb_code} for JavaScript code smells). when Copilot manages to match the Pythonic idiom or the best practice as its first suggestion, we considered it as Copilot suggested the desired approach and passed the coding scenario. 
+We compare Copilot code suggestions against Pythonic idioms and best practices retrieved from our sources~(Alexandru et al.~\cite{Alexandru2018} and Farook et al.~\cite{idioms} for Pythonic idioms and AirBNB JavaScript coding style guide~\cite{airbnb_code} for JavaScript code smells). when Copilot manages to match the Pythonic idiom or the best practice as its first suggestion, we considered it as Copilot suggested the desired approach and passed the coding scenario. 
 In contrast, if Copilot did not have Pythonic idiom or the best practice in any of its all 10 code suggestions currently viewable using Copilot extension in Visual Studio Code, we considered Copilot did not suggest the desired approach and failed the coding scenario.
 
 We assume that \cct{} like Copilot are productivity tools, and the user should be saving time as opposed to writing the optimal way without using \cct{}, scrolling through all the suggestions to deduce the idiomatic approach or the best practice that follows the coding style guide defeats this purpose. 

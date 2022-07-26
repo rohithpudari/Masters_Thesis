@@ -1,6 +1,6 @@
 \section{AI-supported Software Development}
 \label{cs2design}
-We began this thesis by analyzing Copilot code suggestions on Pythonic idioms and best practices in Javascript to understand the current boundaries of \cct{} like Copilot using a software abstraction taxonomy.
+We began this thesis by analyzing Copilot code suggestions on Pythonic idioms and best practices in JavaScript to understand the current boundaries of \cct{} like Copilot using a software abstraction taxonomy.
 In this section, we try to address \textbf{RQ-2} (Given the current boundary, how far is it from suggesting design decisions?) with a discussion on the complex nature of design decisions involving factors ranging from requirement analysis to maintenance, making it difficult for \cct{} like Copilot to detect the information from code files and suggest design decisions to satisfy the top software abstraction level of our taxonomy.
 Additionally, we discuss our vision for \cct{} like Copilot to satisfy the design level in our taxonomy and outline the difficulty its underlying Codex LLM approach might run into.
 Finally, we discuss how design choices change over time and outline the difficulties of \cct{} like Copilot to keep updating its suggestions and reflect the current design practices~(section~\ref{evolution}).
@@ -11,7 +11,7 @@ Design is typically viewed in the context of software engineering as both a proc
 Software design is typically carried out heuristically by pulling from the project context (such as architecturally significant needs), the design team's knowledge, and a constantly evolving set of patterns and styles from the literature. 
 
 Automating this software design process, which is the most abstract element in the software development lifecycle, will be challenging. 
-First, sufficient software design knowledge has to be collected to use as training data to create a good \cct{} that can suggest relevant architectural patterns. 
+First, sufficient software design knowledge has to be collected to use as training data to create good \cct{} that can suggest relevant architectural patterns. 
 Software design generally occurs in various developer communication channels such as issues, pull requests, code reviews, mailing lists, and chat messages for multiple purposes such as identifying latent design decisions, design challenges, design quality, etc. 
 Gathering all this data and generalizing those design decisions in training data to suggest relevant design choices to a user would be the vision for \cct{} to satisfy the design level.
 
@@ -50,7 +50,7 @@ However, these design patterns evolve. For instance, with React Framework's intr
 Similarly, coding practices evolve. 
 For example, in JavaScript, callbacks were considered the best practice in the past to achieve concurrency, which was replaced by promises. 
 When the user has a goal to achieve asynchronous code, there are two ways to create async code: callbacks and promises. Callback allows us to provide a callback to a function, which is called after completion. With promises, you can attach callbacks to the returned promise object.
-One common issue with using the callback approach is that when we have to perform multiple asynchronous operations at a time, we can easily end up with something known as callback hell.
+One common issue with using the callback approach is that when we have to perform multiple asynchronous operations at a time, we can easily end up with something known as ``callback hell''.
 As the name suggests, it is harder to read, manage, and debug. The simplest way to handle asynchronous operations is through promises. In comparison to callbacks, they can easily manage many asynchronous activities and offer better error handling.
 This makes \cct{} be updated regularly to reflect new changes in coding practices and design processes of software development. 
 
@@ -59,4 +59,6 @@ While testing, Copilot suggested code specifically mentioned in the JavaScript d
 However, this is beyond the scope of this study and will be part of future work.
 
 In conclusion, Software design is an abstract field of software development, where humans struggle to make correct design decisions using all their previous experience and various sources of information to satisfy the requirements of a system. 
-Creating \cct{} to automate the software design process requires gathering relevant training data and regular updates to the training data to reflect the new changes in the evolution of the software development process. Further, the current Copilot approach of token-level suggestions needs to be upgraded to move beyond tokens~(shown in \ref{tokens}) to facilitate multi-file input to help make \cct{} capable of satisfying the design level of our taxonomy.
+Creating \cct{} to automate the software design process requires gathering relevant training data and regular updates to the training data to reflect the new changes in the evolution of the software development process.
+Further, the current Copilot approach of token-level suggestions needs to be upgraded to move beyond tokens~(shown in \ref{tokens}) to facilitate multi-file input to help make \cct{} capable of satisfying the design level of our taxonomy.
+So, current \cct{} are far from satisfying design level of software abstraction and require further research in gathering training data, having multi-file input and making regular updates to reflect new changes in the evolution of the software development process.

@@ -33,19 +33,3 @@ This issue could have serious safety implications, further motivating us to prev
 % Working with GitHub's API - not open
 %
 %OpenAI and open source
-
-\subsection{Ethical Considerations}
-\label{ethics}
-Packages or programs created by third parties are frequently imported within a code file. Software engineers rely on functions, libraries, and APIs for the majority of what called as ``boilerplate" code rather than constantly recreating the wheel. 
-However, there are numerous choices for each task: For machine learning, use PyTorch or TensorFlow; for data visualization, use Matplotlib or Seaborn; etc.
-
-Reliance on import suggestions from \cct{} like Copilot may increase as they get used to using \cct{}. 
-Users may employ the model as a decision-making tool or search engine as they get more adept at "prompt engineering" with Codex. 
-Instead of searching the Internet for information on "which machine learning package to employ" or "the advantages and disadvantages of PyTorch vs. Tensorflow," a user may now type "\# import machine learning package" and rely on Codex to handle the rest.
-Based on trends in its training data, Codex imports substitutable packages at varying rates~\cite{copilot}, which may have various effects. 
-Different import rates set by Codex may result in subtle mistakes when a particular import is not advised, increased robustness when an individual's alternative package would have been worse, and/or an increase in the dominance of an already powerful group of people and institutions in the software supply chain.
-
-As a result, certain players may solidify their position in the package market, and Codex may be unaware of any new packages created following the first collection of training data. The model may also recommend deprecated techniques for packages that are already in use. Additional research is required to fully understand the effects of code creation capabilities and effective solutions.
-
-% Despite the fact that many packages are free, developers and companies with popular packages can earn incentives, and free packages can act as covers for paid items. 
-% Therefore, the import patterns used by Codex and other code generation models may have significant economic effects on individuals who create and maintain packages, in addition to possible safety or security effects.

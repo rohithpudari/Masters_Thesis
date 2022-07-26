@@ -24,7 +24,7 @@ However, \cct{} like Copilot should follow coding style guides and adapt their c
 For example, if a user is working on a project where one of the coding style guidelines says to leave a blank line after blocks and before the next statement~\cite{airbnb_code}. As a productivity tool, the ideal behavior for \cct{} like Copilot is to detect the coding style guideline from existing code or a coding style document in the project and always suggest code that follows the guidelines.
 
 Figure~\ref{fig:bp_1} shows the Best Practice for Copying Array Contents, showing user input (i.e., Human Input), the top suggestion by Copilot, and the recommended way suggested by AirBNB JavaScript coding style guide~\cite{airbnb_code}. 
-The code suggested by Copilot uses a for loop to iterate through all the contents of the array and copy them, which is alot slower than the spread approach~([..items]) shown as the best practice to copy array in the AirBNB JavaScript coding style guide~\cite{airbnb_code}. This eliminates the need to iterate through all the elements of the array to copy each one. 
+The code suggested by Copilot uses a for loop to iterate through all the contents of the array and copy them, which is a lot slower than the spread approach~([..items]) shown as the best practice to copy array in the AirBNB JavaScript coding style guide~\cite{airbnb_code}. This eliminates the need to iterate through all the elements of the array to copy each one. 
 
 \begin{figure}[hbt!]
     \centering
@@ -54,7 +54,7 @@ const itemsCopy = [...items];
 \end{figure}
 
 Another example for best practices being better than Copilot code suggestions is shown in figure~\ref{fig:bp_2}. 
-The AirBNB JavaScript coding style guide~\cite{airbnb_code} recommends to always use `const' for all the references and avoid using `var' because using `const' ensures that you can’t reassign your references, which in turn can lead to bugs and difficulty in code comprehension.
+The AirBNB JavaScript coding style guide~\cite{airbnb_code} recommends to always use `const' for all the references and avoid using `var' because using `const' ensures that you cannot reassign your references, which in turn can lead to bugs and difficulty in code comprehension.
 Copilot suggested to use `var' as its first suggestion.
 This shows that code suggested by Copilot has flaws and does not follow the recommended best practices.
 
@@ -84,7 +84,7 @@ const b = 2;
 \end{figure}
 
 Figure~\ref{fig:bp_3} shows the best practice to return a string and a variable name from a function. 
-The AirBNB JavaScript coding style guide~\cite{airbnb_code} suggests to use use template strings instead of concatenation, for programmatically building up strings because template strings give a readable, concise syntax with proper newlines and string interpolation features.
+The AirBNB JavaScript coding style guide~\cite{airbnb_code} suggests to use template strings instead of concatenation, for programmatically building up strings because template strings give a readable, concise syntax with proper newlines and string interpolation features.
 Copilot suggested concatenation as its first suggestion~(shown in figure~\ref{fig:bp_3}).
 
 \begin{figure}[hbt!]
@@ -123,7 +123,7 @@ The results show that Copilot performed worse than the language idioms. This ind
 code completion tools like Copilot are not yet capable of suggesting the best practices in their suggestions, even though the best practices are sampled from a widely accepted coding style guide.
 
 There could be many reasons for this performance, like the public repositories do not always follow coding standards, and Copilot cannot detect coding styles from repositories with contribution guides, including the coding standards followed in the project. 
-Copilot being closed source, we cannot investigate the potential reasons behind this behavior and recommend ways to fix this issue, improving the performance of Copilot.
+Copilot being closed source, we cannot investigate the potential reasons behind this behavior and recommend ways to fix this issue, improving the performance of Copilot. However, improving the frequency of best practice usage in training data and including metrics such as repository popularity in ranking of code suggestions could be some potential areas to explore for improving performance of Copilot.
 
 Copilot had the recommended best practice in its top 10 suggestions for 5 coding scenarios, where Copilot did not rank the recommended best practice as the top suggestion. 
 The ranking methodology of Copilot is not disclosed. However, the results suggest that it is heavily influenced by the frequency of the approach in the training data. 
@@ -157,7 +157,7 @@ For the scope of this thesis, we leave resolving this problem as future work.
          \hline
          6 & Sum of Numbers & 9\textsuperscript{th} \\
          \hline
-         \textbf{7} & \textbf{Accessing Properties} & \textbf{1\textsuperscript{th}} \\
+         \textbf{7} & \textbf{Accessing Properties} & \textbf{1\textsuperscript{st}} \\
          \hline
          8 & Switch case usage & No \\
          \hline

@@ -2,14 +2,14 @@
 \label{chapter:methodology}
 
 \section{Introduction}
-Useful \cct{} should always suggest recommended coding best practices in its first suggestion. In this chapter, we test if Copilot suggests the recommended ways sampled from popular sources.
+Useful \cct{} should always suggest recommended coding best practices in its first suggestion. In this chapter, we test if Copilot suggests the optimal solution for a programming task. ``Optimal ways'' here means recommended ways of solving a programming task sampled from popular sources.
 We begin by explaining the current challenges with \cct{} like Copilot, showing recent research works on common problems faced with using Copilot and the motivation to find the limitations of current \cct{} like Copilot~(section~\ref{challenges}).
 
 In section~\ref{methodology}, we explain our approach to \textbf{RQ-1} (What are the current boundaries of \cct{}?). 
 We describe our sampling approach to collecting Pythonic idioms~(section~\ref{sampling}) and best practices in JavaScript~(section~\ref{smells:sampling}). We then describe the input given to Copilot for triggering the generation of code suggestions~(section~\ref{input}).
 Finally, we explain our evaluation method to compare Copilot suggestions to the recommended practices~(section~\ref{evaluation}).
 
-In section~\ref{results}, we present our results on performance of Copilot in suggesting recommended practices for 50 different coding scenarios~(25 pythonic idioms + 25 code smells), which answers \textbf{RQ-1.1} (How do \cct{} manage programming idioms?), and \textbf{RQ-1.2} (How do \cct{} manage to write non-smelly code?).
+In section~\ref{results}, we present our results on performance of Copilot in suggesting recommended practices for 50 different coding scenarios~(25 Pythonic idioms + 25 code smells), which answers \textbf{RQ-1.1} (How do \cct{} manage programming idioms?), and \textbf{RQ-1.2} (How do \cct{} manage to write non-smelly code?).
 We observe that Copilot had the recommended practices in its top 10 suggestions for 18 out of 50 coding scenarios~(36\% of all tests performed).
 
 % In section~\ref{methodology}, we describe our sampling approach to collecting python idioms and the evaluation method used to compare Copilot suggestions to the optimal way listed in python idioms. In section~\ref{secidioms}, we show the results of the study comparing Copilot suggestions and idioms in python programming language. We observe that Copilot performs poorly in suggesting the optimal way in its suggestions. 
